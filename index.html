@@ -9,7 +9,7 @@
   <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
-  <link rel="stylesheet" href="style.css?v=20261112c">
+  <link rel="stylesheet" href="style.css?v=20261112d">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:title" content="MuStreamer - Streaming Hi-Fi Bit-Perfect">
@@ -104,27 +104,51 @@
       </div>
 
       <div class="container">
-        <!-- Authentic MuStreamer Desktop App Preview -->
+        <!-- Mockup Visualizer Frame -->
         <div class="hero-mockup-wrap">
-          <div class="hero-mockup-frame ms-window">
-            <div class="mockup-header-bar ms-topbar">
-              <div class="ms-traffic-lights">
-                <span class="mockup-dot red"></span>
-                <span class="mockup-dot yellow"></span>
-                <span class="mockup-dot green"></span>
-              </div>
-              <div class="ms-topbar-pill" data-i18n="mockup.title">Now Playing &bull; Studio Stage</div>
-              <div class="ms-topbar-chips">
-                <span class="ms-chip live"><span class="ms-live-dot"></span><span data-i18n="mockup.streaming">Bit-Perfect 24-bit / 192 kHz</span></span>
-              </div>
+          <div class="hero-mockup-frame">
+            <div class="mockup-header-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title" data-i18n="mockup.title">MuStreamer — Riproduzione Hi-Res Bit-Perfect (FLAC 24-bit / 192 kHz)</span>
             </div>
 
-            <div class="ms-screenshot-wrap">
-              <img src="assets/app-preview.jpg?v=20261112c" alt="MuStreamer — Interfaccia Desktop Hi-Res" width="1024" height="604" class="hero-app-screenshot" loading="eager">
+            <div class="mockup-body">
+              <div class="mockup-card">
+                <span class="badge mockup-card-badge" data-i18n="mockup.nowPlaying">In Riproduzione • Qobuz Studio Master</span>
+                <h3 style="font-size: 1.2rem; margin-bottom: 4px;">Wish You Were Here</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Pink Floyd — Wish You Were Here (1975)</p>
+                <div style="margin-top: 16px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-light);" data-i18n="mockup.decodeLine">
+                  ⚡ Decodifica: Locale (Mac/iOS Offload) &bull; Uscita: Bit-Perfect WAV Lossless
+                </div>
+              </div>
+
+              <div class="mockup-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                  <span style="font-size: 0.9rem; font-weight: 600;" data-i18n="mockup.vumeterTitle">VU Meter Analogico Stereo</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); white-space: nowrap;">RMS -12.4 dB</span>
+                </div>
+                <div class="vumeter-sim">
+                  <div class="vu-channel">
+                    <span>L</span>
+                    <div class="vu-bar"><div class="vu-fill"></div></div>
+                  </div>
+                  <div class="vu-channel">
+                    <span>R</span>
+                    <div class="vu-bar"><div class="vu-fill r"></div></div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; font-size: 0.76rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                  <span>-40 dB</span>
+                  <span>-20 dB</span>
+                  <span>-10 dB</span>
+                  <span>0 dB (PEAK)</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -323,6 +347,7 @@
           <a href="index.html" data-i18n="footer.home">Home</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="support.html" data-i18n="footer.support">Supporto & Contatti</a>
+          <a href="mailto:mustreamer@outlook.it" style="color: var(--accent-light);">mustreamer@outlook.it</a>
         </div>
       </div>
 
@@ -336,7 +361,7 @@
   </footer>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261112c"></script>
+  <script src="i18n.js?v=20261112d"></script>
 
   <!-- Configurazione Link Ufficiale Apple App Store -->
   <script>
