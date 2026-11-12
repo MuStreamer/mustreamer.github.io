@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it" data-page="index">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuStreamer - Lo Streaming Audiophile Bit-Perfect per Mac e iPhone</title>
+  <meta id="metaDesc" name="description" content="MuStreamer ridà vita al tuo impianto Hi-Fi: streaming Bit-Perfect fino a 24-bit/192 kHz, integrazione Qobuz e TIDAL, decodifica hardware offload e strumenti di precisione (VU Meter, RTA, Fonometro).">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:title" content="MuStreamer - Streaming Hi-Fi Bit-Perfect">
+  <meta property="og:description" content="Streaming audiophile senza compromessi per Qobuz, TIDAL e streamer UPnP/DLNA come Naim Mu-so.">
+  <meta property="og:image" content="assets/icon.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="MuStreamer Logo" class="brand-icon">
+        <span>Mu<span class="text-accent">Streamer</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" data-i18n="nav.features">Caratteristiche</a></li>
+        <li><a href="#audiophile-tools" data-i18n="nav.tools">Strumenti Hi-Fi</a></li>
+        <li><a href="#story" data-i18n="nav.story">La Nostra Storia</a></li>
+        <li><a href="#specs" data-i18n="nav.specs">Specifiche</a></li>
+        <li><a href="support.html" data-i18n="nav.support">Supporto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Cambia lingua">
+            <span class="lang-flag" id="currentLangFlag">🇮🇹</span>
+            <span class="lang-code" id="currentLangCode">IT</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="lang-menu" id="langMenu" role="listbox" aria-label="Seleziona lingua">
+            <button type="button" class="lang-option active" data-lang="it" role="option"><span class="lang-opt-flag">🇮🇹</span><span class="lang-opt-name">Italiano</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="en" role="option"><span class="lang-opt-flag">🇬🇧</span><span class="lang-opt-name">English</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="fr" role="option"><span class="lang-opt-flag">🇫🇷</span><span class="lang-opt-name">Français</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="de" role="option"><span class="lang-opt-flag">🇩🇪</span><span class="lang-opt-name">Deutsch</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="es" role="option"><span class="lang-opt-flag">🇪🇸</span><span class="lang-opt-name">Español</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="pt" role="option"><span class="lang-opt-flag">🇵🇹</span><span class="lang-opt-name">Português</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="nl" role="option"><span class="lang-opt-flag">🇳🇱</span><span class="lang-opt-name">Nederlands</span><span class="lang-opt-check">✓</span></button>
+            <button type="button" class="lang-option" data-lang="ja" role="option"><span class="lang-opt-flag">🇯🇵</span><span class="lang-opt-name">日本語</span><span class="lang-opt-check">✓</span></button>
+          </div>
+        </div>
+        <a href="https://apps.apple.com/search?term=MuStreamer" class="header-cta app-store-link" target="_blank" rel="noopener" data-i18n="nav.cta">Scarica su App Store</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="badge">
+          <span class="badge-pulse"></span>
+          <span data-i18n="hero.badge">Streaming Hi-Res Bit-Perfect • 24-bit / 192 kHz</span>
+        </div>
+        
+        <h1 data-i18n="hero.title">Nuova vita al tuo impianto Hi-Fi.<br><span class="text-gradient">Zero compromessi sonori.</span></h1>
+        
+        <p class="lead" data-i18n="hero.lead">
+          MuStreamer è il riproduttore audiophile definitivo per Mac e iPhone. Unisce la massima purezza del flusso <strong>Bit-Perfect</strong> all'integrazione nativa di <strong>Qobuz</strong> e <strong>TIDAL</strong>, alleggerendo il carico del tuo streamer UPnP con decodifica locale intelligente.
+        </p>
+
+        <div class="hero-actions" id="download">
+          <!-- Mac App Store Badge -->
+          <a href="https://apps.apple.com/search?term=MuStreamer" class="app-store-btn app-store-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
+            <div class="app-store-btn-text">
+              <span class="caption" data-i18n="hero.macCaption">Disponibile su</span>
+              <span class="store-name">Mac App Store</span>
+            </div>
+          </a>
+
+          <!-- iOS App Store Badge -->
+          <a href="https://apps.apple.com/search?term=MuStreamer" class="app-store-btn app-store-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
+            <div class="app-store-btn-text">
+              <span class="caption" data-i18n="hero.iosCaption">Scarica su</span>
+              <span class="store-name">App Store (iOS)</span>
+            </div>
+          </a>
+
+          <a href="#features" class="btn-secondary" data-i18n="hero.discoverBtn">
+            Scopri le Funzionalità
+          </a>
+        </div>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Disponibile su macOS 14+ (Sonoma/Sequoia) e iOS 17+. Compatibile con protocolli standard UPnP / DLNA.</p>
+        
+        <div class="coming-soon-badge">
+          <span class="dot"></span>
+          <span data-i18n="hero.comingSoon">Presto su <strong>Windows</strong> e <strong>Android</strong>...</span>
+        </div>
+
+        <!-- Mockup Visualizer Frame -->
+        <div class="hero-mockup-wrap">
+          <div class="hero-mockup-frame">
+            <div class="mockup-header-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title" data-i18n="mockup.title">MuStreamer — Riproduzione Hi-Res Bit-Perfect (FLAC 24-bit / 192 kHz)</span>
+            </div>
+            
+            <div class="mockup-body">
+              <div class="mockup-card">
+                <span class="badge" style="font-size: 0.72rem; padding: 3px 10px; margin-bottom: 8px;" data-i18n="mockup.nowPlaying">In Riproduzione • Qobuz Studio Master</span>
+                <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Wish You Were Here</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Pink Floyd — Wish You Were Here (1975)</p>
+                <div style="margin-top: 16px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-light);" data-i18n="mockup.decodeLine">
+                  ⚡ Decodifica: Locale (Mac/iOS Offload) &bull; Uscita: Bit-Perfect WAV Lossless
+                </div>
+              </div>
+
+              <div class="mockup-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.88rem; font-weight: 600;" data-i18n="mockup.vumeterTitle">VU Meter Analogico Stereo</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);">RMS -12.4 dB</span>
+                </div>
+                <div class="vumeter-sim">
+                  <div class="vu-channel">
+                    <span>L</span>
+                    <div class="vu-bar"><div class="vu-fill"></div></div>
+                  </div>
+                  <div class="vu-channel">
+                    <span>R</span>
+                    <div class="vu-bar"><div class="vu-fill r"></div></div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; font-size: 0.76rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                  <span>-40 dB</span>
+                  <span>-20 dB</span>
+                  <span>-10 dB</span>
+                  <span>0 dB (PEAK)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge" data-i18n="features.badge">Ingegneria Acustica</span>
+          <h2 data-i18n="features.title">Progettato da e per Audiofili</h2>
+          <p data-i18n="features.subtitle">Tutte le tecnologie necessarie per superare i limiti dei vecchi protocolli e godere di ogni sfumatura sonora.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3 data-i18n="features.c1Title">100% Bit-Perfect & Hi-Res</h3>
+            <p data-i18n="features.c1Desc">I dati audio arrivano allo stereo senza ricampionamenti, troncamenti di bit o compressioni dinamiche. Frequenze fino a 192 kHz e profondità a 24 bit riprodotte all'originale.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 data-i18n="features.c2Title">Decodifica Locale Intelligente</h3>
+            <p data-i18n="features.c2Desc">Se il tuo streamer ha un processore poco potente che fatica sui file pesanti (come il Naim Mu-so 1st gen), puoi delegare la decodifica al Mac o all'iPhone, trasmettendo un flusso leggero e ultra-stabile senza interruzioni.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3 data-i18n="features.c3Title">Qobuz & TIDAL Integrati</h3>
+            <p data-i18n="features.c3Desc">Libertà totale di ascolto. Accedi direttamente a cataloghi immensi, sfoglia le novità in studio master, i tuoi album e brani preferiti senza mai uscire dall'app.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3 data-i18n="features.c4Title">Protocollo UPnP / DLNA Esteso</h3>
+            <p data-i18n="features.c4Desc">Riconoscimento istantaneo di streamer di rete, all-in-one e DAC Wi-Fi. Buffer predittivo anti-jitter per garantire la continuità anche su reti wireless trafficate.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card">
+            <div class="feature-icon">🎛️</div>
+            <h3 data-i18n="features.c5Title">Equalizzatore & Correzione audio</h3>
+            <p data-i18n="features.c5Desc">Equalizzatore parametrico a 10 bande con preset audiophile o personalizzazione millimetrica per l'acustica della tua stanza.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3 data-i18n="features.c6Title">Interfaccia Hi-Fi Dark</h3>
+            <p data-i18n="features.c6Desc">Eleganza pura in tonalità arancione e nero titanio. Tipografia pulita, miniature in altissima risoluzione e controlli studiati per essere intuitivi e fluidi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audiophile Tools Section -->
+    <section id="audiophile-tools" style="background: rgba(14, 16, 22, 0.45);">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge" data-i18n="tools.badge">Laboratorio di Misura</span>
+          <h2 data-i18n="tools.title">Una Suite di Strumenti di Precisione</h2>
+          <p data-i18n="tools.subtitle">MuStreamer non è solo un player: integra veri strumenti di analisi e calibrazione acustica acclamati dagli appassionati.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 data-i18n="tools.c1Title">VU Meter Analogico</h3>
+            <p data-i18n="tools.c1Desc">Balistica di risposta calibrata secondo gli standard internazionali. Monitora in tempo reale il livello RMS e i picchi dinamici di ciascun canale stereofonico.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 data-i18n="tools.c2Title">Analizzatore di Spettro (RTA)</h3>
+            <p data-i18n="tools.c2Desc">Visualizza graficamente l'energia sonora dai 20 Hz fino a oltre 20.000 Hz. Individua risonanze della stanza, code nei bassi e la brillantezza delle alte frequenze.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3 data-i18n="tools.c3Title">Fonometro SPL nel Punto d'Ascolto</h3>
+            <p data-i18n="tools.c3Desc">Misura l'intensità della pressione acustica in dB(A) e dB(C) direttamente con il microfono del tuo Mac o iPhone per proteggere l'udito e trovare il volume ideale.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔊</div>
+            <h3 data-i18n="tools.c4Title">Generatore Rumore Rosa & Toni</h3>
+            <p data-i18n="tools.c4Desc">Emetti rumore rosa, rumore bianco o toni sinusoidali a frequenza variabile continua (da 20 Hz a 20 kHz) per tarare diffusori, subwoofer e bilanciamento canali.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+      <div class="container">
+        <div class="story-box">
+          <span class="badge" style="margin-bottom: 20px;" data-i18n="story.badge">Dietro le quinte</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 24px;" data-i18n="story.title">Perché è nata MuStreamer</h2>
+          
+          <div class="story-text">
+            <p data-i18n="story.p1">
+              Da utilizzatore di un impianto All-in-One con ormai qualche annetto sulle spalle (il mitico <strong>Naim Mu-so</strong> di prima generazione), ho sempre trovato la sua resa audio sbalorditiva per la sua categoria. Nel tempo, però, sono emersi tre limiti importanti:
+            </p>
+            <ul>
+              <li data-i18n="story.li1"><strong>L’assenza di un’integrazione nativa con Qobuz</strong></li>
+              <li data-i18n="story.li2"><strong>La stabilità di rete ballerina</strong> per chi, non potendo usare un cavo Ethernet, è costretto a usare il Wi-Fi di prima generazione</li>
+              <li data-i18n="story.li3"><strong>Un processore interno ormai troppo poco potente</strong> per gestire in modo fluido i flussi Hi-Res più pesanti senza fastidiose interruzioni</li>
+            </ul>
+            <p data-i18n="story.p2">
+              L’unico modo per riprodurre la musica liquida ad alta risoluzione era ricorrere al protocollo UPnP. Purtroppo, le app disponibili sullo store si sono sempre rivelate lente, instabili, graficamente datate e con funzionalità ridotte all’osso.
+            </p>
+            <p data-i18n="story.p3">
+              Per questo è nata <strong>MuStreamer</strong>: un'applicazione moderna, veloce e pensata da chi ascolta musica per soddisfare davvero le esigenze degli audiofili.
+              All'interno troverete strumenti di precisione come il <em>VU Meter analogico</em>, l'<em>analizzatore di spettro in tempo reale</em>, il <em>fonometro acustico</em> nel punto d'ascolto e un <em>generatore di segnali audio</em> (toni di prova a frequenza variabile, rumore rosa e bianco per la calibrazione). Non ci siamo limitati a Qobuz, ma abbiamo integrato anche TIDAL, così da garantire a tutti la massima libertà di scelta.
+            </p>
+            <p data-i18n="story.p4">
+              Inoltre, per chi possiede streamer o diffusori con CPU meno recenti, MuStreamer introduce una funzione fondamentale: la possibilità di scegliere se delegare la decodifica al Mac o all'iPhone, alleggerendo completamente lo stereo dal carico computazionale, oppure affidarla al DAC interno. In entrambi i casi il flusso viene gestito rigorosamente in <strong>Bit-Perfect</strong>, garantendo la massima purezza sonora possibile.
+            </p>
+            <p data-i18n="story.p5">
+              Spero che MuStreamer possa dare nuova vita ai vostri impianti e risolvere i problemi che ho vissuto in prima persona. L'app è in continua evoluzione: per qualsiasi suggerimento, idea o segnalazione potete usare l'apposita sezione nel pannello Impostazioni (ogni feedback è super ben accetto! 😊).
+            </p>
+          </div>
+
+          <div class="story-signature">
+            <div class="signature-avatar">G</div>
+            <div class="signature-info">
+              <strong>Gianluca</strong>
+              <span data-i18n="story.role">Ideatore e Sviluppatore di MuStreamer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section id="specs">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge" data-i18n="specs.badge">Scheda Tecnica</span>
+          <h2 data-i18n="specs.title">Compatibilità & Specifiche</h2>
+          <p data-i18n="specs.subtitle">Tutti i dettagli architetturali dell'ecosistema MuStreamer.</p>
+        </div>
+
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th data-i18n="specs.thParam">Parametro</th>
+              <th data-i18n="specs.thSpec">Specifica Supportata</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="specs.r1Label">Risoluzione Massima</td>
+              <td data-i18n="specs.r1Val"><strong>24-bit / 192 kHz</strong> (Hi-Res Studio Master Bit-Perfect)</td>
+            </tr>
+            <tr>
+              <td data-i18n="specs.r2Label">Formati Audio</td>
+              <td>FLAC, WAV, ALAC, AIFF, MP3, AAC</td>
+            </tr>
+            <tr>
+              <td data-i18n="specs.r3Label">Servizi di Streaming</td>
+              <td><strong>Qobuz</strong> (Hi-Res FLAC) &bull; <strong>TIDAL</strong> (Max Hi-Res FLAC)</td>
+            </tr>
+            <tr>
+              <td data-i18n="specs.r4Label">Protocollo di Uscita</td>
+              <td data-i18n="specs.r4Val">UPnP AV / DLNA MediaRenderer 1.0/2.0 con transcodifica Bit-Perfect lineare</td>
+            </tr>
+            <tr>
+              <td data-i18n="specs.r5Label">Piattaforme</td>
+              <td>
+                <strong>macOS 14.0+</strong> (Apple Silicon & Intel) &bull; <strong>iOS 17.0+</strong> (iPhone & iPad)
+                <div style="margin-top: 6px; font-size: 0.85rem; color: var(--accent-light);" data-i18n="specs.r5Soon">
+                  ⏳ Presto disponibile anche per <strong>Windows</strong> e <strong>Android</strong>
+                </div>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="brand">
+          <img src="assets/icon.png" alt="MuStreamer" class="brand-icon" style="width: 30px; height: 30px;">
+          <span>Mu<span class="text-accent">Streamer</span></span>
+        </div>
+        <div class="footer-nav">
+          <a href="index.html" data-i18n="footer.home">Home</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="support.html" data-i18n="footer.support">Supporto & Contatti</a>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p data-i18n="footer.copy">&copy; 2026 MuStreamer. Tutti i diritti riservati.</p>
+        <p style="margin-top: 8px;" data-i18n="footer.disclaimer">
+          <em>Nota Legale & Marchi:</em> Naim, Mu-so, Qobuz e TIDAL sono marchi registrati dei rispettivi proprietari e sono qui citati esclusivamente a scopo descrittivo e di compatibilità hardware/software. MuStreamer è un'applicazione indipendente sviluppata da appassionati per la comunità Hi-Fi.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Multilingua i18n -->
+  <script src="i18n.js"></script>
+
+  <!-- Configurazione Link Ufficiale Apple App Store -->
+  <script>
+    // 💡 COME COLLEGARE IL TUO LINK APP STORE:
+    // Non appena crei l'app su App Store Connect, Apple ti assegna un Apple ID numerico (es: "6741234567").
+    // Inseriscilo tra le virgolette qui sotto. I pulsanti punteranno automaticamente alla pagina ufficiale dell'app!
+    const APPLE_APP_STORE_ID = ""; // es: "6741234567"
+
+    const appStoreTargetURL = APPLE_APP_STORE_ID && APPLE_APP_STORE_ID.trim() !== ""
+      ? `https://apps.apple.com/app/mustreamer/id${APPLE_APP_STORE_ID.trim()}`
+      : "https://apps.apple.com/search?term=MuStreamer";
+
+    document.querySelectorAll(".app-store-link").forEach(btn => {
+      btn.href = appStoreTargetURL;
+    });
+  </script>
+
+</body>
+</html>
