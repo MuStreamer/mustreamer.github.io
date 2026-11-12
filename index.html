@@ -9,7 +9,7 @@
   <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
-  <link rel="stylesheet" href="style.css?v=20261112b">
+  <link rel="stylesheet" href="style.css?v=20261112c">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:title" content="MuStreamer - Streaming Hi-Fi Bit-Perfect">
@@ -119,139 +119,8 @@
               </div>
             </div>
 
-            <div class="ms-app-shell">
-              <!-- Sidebar coerente con MuStreamer Desktop -->
-              <aside class="ms-sidebar" aria-hidden="true">
-                <div class="ms-sidebar-brand">
-                  <img src="assets/icon.png" alt="MuStreamer" width="24" height="24">
-                  <span>Mu<strong>Streamer</strong></span>
-                </div>
-                <nav class="ms-nav-list">
-                  <div class="ms-nav-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
-                    <span data-i18n="mockup.navHome">Home</span>
-                  </div>
-                  <div class="ms-nav-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-                    <span data-i18n="mockup.navCatalog">Catalogo</span>
-                  </div>
-                  <div class="ms-nav-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2-6 4 12 3-8 2 2h5"/></svg>
-                    <span data-i18n="mockup.navTools">Strumenti Hi-Fi</span>
-                  </div>
-                  <div class="ms-nav-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-                    <span data-i18n="mockup.navPlaylists">Playlist</span>
-                  </div>
-                  <div class="ms-nav-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r="1"/></svg>
-                    <span data-i18n="mockup.navDevices">Dispositivi</span>
-                  </div>
-                  <div class="ms-nav-item active">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" opacity="0.22"/><path d="M10 8.5v7l6-3.5z"/></svg>
-                    <span data-i18n="mockup.navNowPlaying">Now Playing</span>
-                  </div>
-                </nav>
-                <div class="ms-renderer-card">
-                  <div class="ms-renderer-row">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="14" r="3"/></svg>
-                    <span>Naim Mu-so</span>
-                  </div>
-                  <span class="ms-renderer-mode" data-i18n="mockup.offloadMode">WAV Offload • Bit-Perfect</span>
-                </div>
-              </aside>
-
-              <!-- Schermata Principale Now Playing Studio -->
-              <div class="ms-player-stage">
-                <div class="ms-stage-glow"></div>
-
-                <div class="ms-np-grid">
-                  <!-- Colonna Sinistra: Artwork Hi-Res + Streamer Attivo -->
-                  <div class="ms-cover-col">
-                    <div class="ms-album-art">
-                      <div class="ms-art-vinyl"></div>
-                      <div class="ms-art-sleeve">
-                        <div class="ms-art-prism"></div>
-                        <div class="ms-art-overlay">
-                          <span class="ms-art-provider">QOBUZ</span>
-                          <span class="ms-art-hires">24 / 192</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="ms-streamer-pill">
-                      <div class="ms-streamer-left">
-                        <span class="ms-streamer-kicker" data-i18n="mockup.activeStreamer">STREAMER ATTIVO</span>
-                        <strong>Naim Mu-so &bull; Living Room</strong>
-                      </div>
-                      <span class="ms-streamer-change" data-i18n="mockup.changeBtn">Cambia &rsaquo;</span>
-                    </div>
-                  </div>
-
-                  <!-- Colonna Destra: Info Brano, Scrubber, Controlli, Signal Path & Dock -->
-                  <div class="ms-controls-col">
-                    <div class="ms-status-badges">
-                      <span class="ms-badge-provider" data-i18n="mockup.nowPlaying">Qobuz Studio Master</span>
-                      <span class="ms-badge-signal" data-i18n="mockup.signalBadge">Signal Path: Bit-Perfect</span>
-                    </div>
-
-                    <div class="ms-track-meta">
-                      <h3>Wish You Were Here</h3>
-                      <p>Pink Floyd &bull; Wish You Were Here (1975)</p>
-                    </div>
-
-                    <div class="ms-scrubber">
-                      <div class="ms-scrub-track">
-                        <div class="ms-scrub-fill"></div>
-                        <div class="ms-scrub-thumb"></div>
-                      </div>
-                      <div class="ms-scrub-times">
-                        <span>01:48</span>
-                        <span>05:34</span>
-                      </div>
-                    </div>
-
-                    <div class="ms-transport">
-                      <span class="ms-tbtn muted" title="Shuffle">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
-                      </span>
-                      <span class="ms-tbtn" title="Previous">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-                      </span>
-                      <span class="ms-tbtn-play" title="Play / Pause">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="6" width="3.5" height="12" rx="1"/><rect x="13.5" y="6" width="3.5" height="12" rx="1"/></svg>
-                      </span>
-                      <span class="ms-tbtn" title="Next">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
-                      </span>
-                      <span class="ms-tbtn active" title="Repeat">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
-                      </span>
-                    </div>
-
-                    <div class="ms-dock-card">
-                      <div class="ms-signal-chain" data-i18n="mockup.decodeLine">
-                        <span>FLAC 24/192</span>
-                        <span class="ms-arrow">&rarr;</span>
-                        <span>Mac Offload WAV</span>
-                        <span class="ms-arrow">&rarr;</span>
-                        <span class="ms-ok">Naim Mu-so (4 ms)</span>
-                      </div>
-                      <div class="ms-dock-pills">
-                        <span class="ms-dock-pill" data-i18n="mockup.dockLyrics">Testi</span>
-                        <span class="ms-dock-pill" data-i18n="mockup.dockQueue">Coda (8)</span>
-                        <span class="ms-dock-pill active">Gapless</span>
-                        <span class="ms-dock-pill accent" data-i18n="mockup.dockDiag">Diagnostica</span>
-                      </div>
-                    </div>
-
-                    <div class="ms-next-up">
-                      <span class="ms-next-kicker" data-i18n="mockup.nextUp">PROSSIMO IN CODA</span>
-                      <span class="ms-next-track">Shine On You Crazy Diamond (Pts. 1–5) &bull; Pink Floyd</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="ms-screenshot-wrap">
+              <img src="assets/app-preview.jpg?v=20261112c" alt="MuStreamer — Interfaccia Desktop Hi-Res" width="1024" height="604" class="hero-app-screenshot" loading="eager">
             </div>
           </div>
         </div>
@@ -467,7 +336,7 @@
   </footer>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261112b"></script>
+  <script src="i18n.js?v=20261112c"></script>
 
   <!-- Configurazione Link Ufficiale Apple App Store -->
   <script>
