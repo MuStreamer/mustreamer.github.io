@@ -464,6 +464,20 @@ header.site-header {
   color: var(--text-muted);
 }
 
+.hero-mac-tip {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 660px;
+  margin: 8px auto 0;
+  line-height: 1.45;
+}
+
+.hero-mac-tip code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-light);
+}
+
 .coming-soon-badge {
   display: inline-flex;
   align-items: center;
