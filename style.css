@@ -62,7 +62,7 @@ body::before {
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: min(900px, 100vw);
   height: 500px;
   background: radial-gradient(circle, rgba(255, 107, 0, 0.12) 0%, rgba(8, 9, 12, 0) 70%);
   z-index: -1;
@@ -595,7 +595,7 @@ header.site-header {
 
 .ms-app-shell {
   display: grid;
-  grid-template-columns: 205px 1fr;
+  grid-template-columns: 205px minmax(0, 1fr);
   min-height: 390px;
 }
 
@@ -698,6 +698,7 @@ header.site-header {
 
 .ms-player-stage {
   position: relative;
+  min-width: 0;
   padding: 26px 28px;
   display: flex;
   align-items: center;
@@ -718,8 +719,9 @@ header.site-header {
   position: relative;
   z-index: 1;
   width: 100%;
+  min-width: 0;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 28px;
   align-items: center;
 }
@@ -728,6 +730,7 @@ header.site-header {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
 }
 
 .ms-album-art {
@@ -838,6 +841,7 @@ header.site-header {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-width: 0;
 }
 
 .ms-status-badges {
@@ -1015,6 +1019,7 @@ header.site-header {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  min-width: 0;
   padding: 8px 12px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.03);
@@ -1028,9 +1033,11 @@ header.site-header {
   font-weight: 700;
   color: var(--accent-light);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .ms-next-track {
+  min-width: 0;
   color: var(--text-muted);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1272,14 +1279,18 @@ footer.site-footer {
 
 /* Responsive */
 @media (max-width: 860px) {
-  .ms-app-shell { grid-template-columns: 1fr; }
+  .ms-app-shell { grid-template-columns: minmax(0, 1fr); }
   .ms-sidebar { display: none; }
-  .ms-np-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .ms-np-grid { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
   .ms-cover-col { align-items: center; width: 100%; max-width: 280px; }
   .ms-streamer-pill { width: 100%; text-align: left; }
   .ms-status-badges { justify-content: center; }
   .ms-controls-col { width: 100%; }
   .ms-topbar-chips { display: none; }
+  .ms-dock-pills { justify-content: center; }
+  .ms-dock-pill.accent { margin-left: 0; }
+  .ms-next-up { flex-direction: column; align-items: flex-start; gap: 3px; text-align: left; }
+  .ms-next-track { width: 100%; }
 }
 
 @media (max-width: 768px) {
@@ -1289,15 +1300,20 @@ footer.site-footer {
 }
 
 @media (max-width: 540px) {
-  .container { padding: 0 12px; }
+  .container { padding: 0 14px; }
   .brand { font-size: 0.96rem; gap: 6px; }
   .brand-icon { width: 28px; height: 28px; border-radius: 7px; }
   .nav-actions { gap: 6px; }
   .lang-btn { padding: 5px 8px; font-size: 0.73rem; gap: 4px; }
   .lang-flag { font-size: 0.88rem; }
   .header-cta { padding: 6px 10px; font-size: 0.71rem; }
-  .hero h1 { font-size: clamp(1.9rem, 7.2vw, 2.4rem); }
-  .badge { font-size: 0.7rem; padding: 5px 11px; max-width: 100%; flex-wrap: wrap; justify-content: center; text-align: center; }
-  .mockup-title { padding-right: 0; font-size: 0.74rem; }
+  .hero h1 { font-size: clamp(1.75rem, 7vw, 2.3rem); }
+  .badge { font-size: 0.68rem; padding: 5px 11px; max-width: 100%; flex-wrap: wrap; justify-content: center; text-align: center; }
+  .coming-soon-badge { max-width: 100%; font-size: 0.8rem; padding: 6px 14px; }
+  .ms-player-stage { padding: 18px 14px; }
+  .ms-album-art { width: 184px; height: 184px; }
+  .ms-art-sleeve { width: 170px; height: 170px; }
+  .ms-art-vinyl { width: 160px; height: 160px; top: 12px; right: -8px; }
+  .ms-topbar-pill { font-size: 0.68rem; padding: 3px 10px; }
   .specs-table th, .specs-table td { padding: 12px 12px; font-size: 0.85rem; }
 }

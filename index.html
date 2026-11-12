@@ -9,7 +9,7 @@
   <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261112b">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:title" content="MuStreamer - Streaming Hi-Fi Bit-Perfect">
@@ -23,7 +23,7 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/icon.png" alt="MuStreamer Logo" class="brand-icon">
+        <img src="assets/icon.png" alt="MuStreamer Logo" class="brand-icon" width="36" height="36">
         <span>Mu<span class="text-accent">Streamer</span></span>
       </a>
       <ul class="nav-links">
@@ -38,7 +38,7 @@
           <button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Cambia lingua">
             <span class="lang-flag" id="currentLangFlag">🇮🇹</span>
             <span class="lang-code" id="currentLangCode">IT</span>
-            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg class="lang-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="lang-menu" id="langMenu" role="listbox" aria-label="Seleziona lingua">
             <button type="button" class="lang-option active" data-lang="it" role="option"><span class="lang-opt-flag">🇮🇹</span><span class="lang-opt-name">Italiano</span><span class="lang-opt-check">✓</span></button>
@@ -74,7 +74,7 @@
         <div class="hero-actions" id="download">
           <!-- Direct macOS DMG Download -->
           <a href="downloads/MuStreamer-macOS.dmg" class="app-store-btn" download="MuStreamer-macOS.dmg">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
             <div class="app-store-btn-text">
               <span class="caption" data-i18n="hero.macCaption">Scarica gratis per Mac</span>
               <span class="store-name" data-i18n="hero.macStore">Download (.dmg)</span>
@@ -83,7 +83,7 @@
 
           <!-- iOS App Store Badge -->
           <a href="https://apps.apple.com/search?term=MuStreamer" class="app-store-btn app-store-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.67-2.81 1.45-.58.68-1.1 1.77-.96 2.84 1.12.09 2.19-.57 2.81-1.34z"/></svg>
             <div class="app-store-btn-text">
               <span class="caption" data-i18n="hero.iosCaption">Scarica su</span>
               <span class="store-name">App Store (iOS)</span>
@@ -101,7 +101,9 @@
           <span class="dot"></span>
           <span data-i18n="hero.comingSoon">Presto su <strong>Windows</strong> e <strong>Android</strong>...</span>
         </div>
+      </div>
 
+      <div class="container">
         <!-- Authentic MuStreamer Desktop App Preview -->
         <div class="hero-mockup-wrap">
           <div class="hero-mockup-frame ms-window">
@@ -121,38 +123,38 @@
               <!-- Sidebar coerente con MuStreamer Desktop -->
               <aside class="ms-sidebar" aria-hidden="true">
                 <div class="ms-sidebar-brand">
-                  <img src="assets/icon.png" alt="MuStreamer">
+                  <img src="assets/icon.png" alt="MuStreamer" width="24" height="24">
                   <span>Mu<strong>Streamer</strong></span>
                 </div>
                 <nav class="ms-nav-list">
                   <div class="ms-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
                     <span data-i18n="mockup.navHome">Home</span>
                   </div>
                   <div class="ms-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
                     <span data-i18n="mockup.navCatalog">Catalogo</span>
                   </div>
                   <div class="ms-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2-6 4 12 3-8 2 2h5"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2-6 4 12 3-8 2 2h5"/></svg>
                     <span data-i18n="mockup.navTools">Strumenti Hi-Fi</span>
                   </div>
                   <div class="ms-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
                     <span data-i18n="mockup.navPlaylists">Playlist</span>
                   </div>
                   <div class="ms-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r="1"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r="1"/></svg>
                     <span data-i18n="mockup.navDevices">Dispositivi</span>
                   </div>
                   <div class="ms-nav-item active">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" opacity="0.22"/><path d="M10 8.5v7l6-3.5z"/></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" opacity="0.22"/><path d="M10 8.5v7l6-3.5z"/></svg>
                     <span data-i18n="mockup.navNowPlaying">Now Playing</span>
                   </div>
                 </nav>
                 <div class="ms-renderer-card">
                   <div class="ms-renderer-row">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="14" r="3"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="14" r="3"/></svg>
                     <span>Naim Mu-so</span>
                   </div>
                   <span class="ms-renderer-mode" data-i18n="mockup.offloadMode">WAV Offload • Bit-Perfect</span>
@@ -211,19 +213,19 @@
 
                     <div class="ms-transport">
                       <span class="ms-tbtn muted" title="Shuffle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
                       </span>
                       <span class="ms-tbtn" title="Previous">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
                       </span>
                       <span class="ms-tbtn-play" title="Play / Pause">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="6" width="3.5" height="12" rx="1"/><rect x="13.5" y="6" width="3.5" height="12" rx="1"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="6" width="3.5" height="12" rx="1"/><rect x="13.5" y="6" width="3.5" height="12" rx="1"/></svg>
                       </span>
                       <span class="ms-tbtn" title="Next">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
                       </span>
                       <span class="ms-tbtn active" title="Repeat">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
                       </span>
                     </div>
 
@@ -445,7 +447,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="brand">
-          <img src="assets/icon.png" alt="MuStreamer" class="brand-icon" style="width: 30px; height: 30px;">
+          <img src="assets/icon.png" alt="MuStreamer" class="brand-icon" width="30" height="30" style="width: 30px; height: 30px;">
           <span>Mu<span class="text-accent">Streamer</span></span>
         </div>
         <div class="footer-nav">
@@ -465,7 +467,7 @@
   </footer>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js"></script>
+  <script src="i18n.js?v=20261112b"></script>
 
   <!-- Configurazione Link Ufficiale Apple App Store -->
   <script>
