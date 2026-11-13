@@ -9,14 +9,14 @@
   const STORAGE_KEY = "mustreamer_lang";
 
   const LANG_META = {
-    it: { flag: "🇮🇹", code: "IT", name: "Italiano", aria: "Cambia lingua", menuAria: "Seleziona lingua" },
-    en: { flag: "🇬🇧", code: "EN", name: "English", aria: "Change language", menuAria: "Select language" },
-    fr: { flag: "🇫🇷", code: "FR", name: "Français", aria: "Changer de langue", menuAria: "Choisir la langue" },
-    de: { flag: "🇩🇪", code: "DE", name: "Deutsch", aria: "Sprache ändern", menuAria: "Sprache auswählen" },
-    es: { flag: "🇪🇸", code: "ES", name: "Español", aria: "Cambiar idioma", menuAria: "Seleccionar idioma" },
-    pt: { flag: "🇵🇹", code: "PT", name: "Português", aria: "Mudar idioma", menuAria: "Selecionar idioma" },
-    nl: { flag: "🇳🇱", code: "NL", name: "Nederlands", aria: "Taal wijzigen", menuAria: "Taal selecteren" },
-    ja: { flag: "🇯🇵", code: "JA", name: "日本語", aria: "言語を変更", menuAria: "言語を選択" }
+    it: { flag: "🇮🇹", code: "IT", name: "Italiano", aria: "Cambia lingua", menuAria: "Seleziona lingua", pagesAria: "Pagine del sito", pagerAria: "Navigazione pagine" },
+    en: { flag: "🇬🇧", code: "EN", name: "English", aria: "Change language", menuAria: "Select language", pagesAria: "Site pages", pagerAria: "Page navigation" },
+    fr: { flag: "🇫🇷", code: "FR", name: "Français", aria: "Changer de langue", menuAria: "Choisir la langue", pagesAria: "Pages du site", pagerAria: "Navigation des pages" },
+    de: { flag: "🇩🇪", code: "DE", name: "Deutsch", aria: "Sprache ändern", menuAria: "Sprache auswählen", pagesAria: "Seitenmenü", pagerAria: "Seitennavigation" },
+    es: { flag: "🇪🇸", code: "ES", name: "Español", aria: "Cambiar idioma", menuAria: "Seleccionar idioma", pagesAria: "Páginas del sitio", pagerAria: "Navegación de páginas" },
+    pt: { flag: "🇵🇹", code: "PT", name: "Português", aria: "Mudar idioma", menuAria: "Selecionar idioma", pagesAria: "Páginas do site", pagerAria: "Navegação de páginas" },
+    nl: { flag: "🇳🇱", code: "NL", name: "Nederlands", aria: "Taal wijzigen", menuAria: "Taal selecteren", pagesAria: "Sitepagina's", pagerAria: "Paginanavigatie" },
+    ja: { flag: "🇯🇵", code: "JA", name: "日本語", aria: "言語を変更", menuAria: "言語を選択", pagesAria: "サイトページ", pagerAria: "ページ移動" }
   };
 
   const TRANSLATIONS = {
@@ -1026,15 +1026,21 @@
       });
     }
 
-    // Aggiorna UI del selettore lingua
+    // Aggiorna UI del selettore lingua e menu mobile
     const flagEl = document.getElementById("currentLangFlag");
     const codeEl = document.getElementById("currentLangCode");
     const btnEl = document.getElementById("langBtn");
     const menuEl = document.getElementById("langMenu");
+    const mobileBtnEl = document.getElementById("mobileNavBtn");
+    const mobileMenuEl = document.getElementById("mobileNavMenu");
+    const mobilePagerEl = document.getElementById("mobileSectionPager");
     if (flagEl) flagEl.textContent = meta.flag;
     if (codeEl) codeEl.textContent = meta.code;
     if (btnEl) btnEl.setAttribute("aria-label", meta.aria);
     if (menuEl) menuEl.setAttribute("aria-label", meta.menuAria);
+    if (mobileBtnEl) mobileBtnEl.setAttribute("aria-label", meta.pagesAria);
+    if (mobileMenuEl) mobileMenuEl.setAttribute("aria-label", meta.pagesAria);
+    if (mobilePagerEl) mobilePagerEl.setAttribute("aria-label", meta.pagerAria);
 
     document.querySelectorAll(".lang-option").forEach((opt) => {
       const isSelected = opt.getAttribute("data-lang") === safeLang;
@@ -1043,6 +1049,9 @@
     });
 
     syncInternalLinks(safeLang);
+    if (typeof syncMobileNavLabels === "function") {
+      syncMobileNavLabels();
+    }
 
     if (persist) {
       try {
@@ -1061,19 +1070,132 @@
     }
   }
 
-  // Inizializzazione Dropdown & Event Listeners
+  // Inizializzazione Dropdown (Lingua + Navigazione Mobile) & Selettore Pagine Mobile
+  const MOBILE_SECTIONS = ["home", "features", "tools", "story", "specs"];
+  const HASH_TO_SECTION = {
+    "": "home",
+    "#": "home",
+    "#home": "home",
+    "#download": "home",
+    "#features": "features",
+    "#audiophile-tools": "tools",
+    "#tools": "tools",
+    "#story": "story",
+    "#specs": "specs"
+  };
+  const SECTION_TO_HASH = {
+    home: "#home",
+    features: "#features",
+    tools: "#audiophile-tools",
+    story: "#story",
+    specs: "#specs"
+  };
+
   const switcher = document.getElementById("langSwitcher");
   const langBtn = document.getElementById("langBtn");
+  const mobileSwitcher = document.getElementById("mobileNavSwitcher");
+  const mobileNavBtn = document.getElementById("mobileNavBtn");
+  const mobileNavMenu = document.getElementById("mobileNavMenu");
+  const currentMobilePageEl = document.getElementById("currentMobilePage");
+  const mobilePrevBtn = document.getElementById("mobilePrevBtn");
+  const mobileNextBtn = document.getElementById("mobileNextBtn");
+  const mobilePrevLabel = document.getElementById("mobilePrevLabel");
+  const mobileNextLabel = document.getElementById("mobileNextLabel");
+  const mobilePagerIndicator = document.getElementById("mobilePagerIndicator");
 
-  function closeMenu() {
+  let activeMobileSection = "home";
+
+  function isMobileViewport() {
+    return window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function getMobileTargetLabel(target) {
+    if (!mobileNavMenu) return "";
+    const opt = mobileNavMenu.querySelector(`.mobile-nav-option[data-mobile-target="${target}"] .mobile-nav-opt-label`);
+    return opt ? opt.textContent.trim() : "";
+  }
+
+  function syncMobileNavLabels() {
+    const page = document.documentElement.getAttribute("data-page") || "index";
+    if (page !== "index") {
+      if (currentMobilePageEl) {
+        const subLabel = getMobileTargetLabel(page);
+        if (subLabel) currentMobilePageEl.textContent = subLabel;
+      }
+      return;
+    }
+
+    if (currentMobilePageEl) {
+      const lbl = getMobileTargetLabel(activeMobileSection);
+      if (lbl) currentMobilePageEl.textContent = lbl;
+    }
+
+    const idx = MOBILE_SECTIONS.indexOf(activeMobileSection);
+    if (mobilePagerIndicator) {
+      mobilePagerIndicator.textContent = `${idx + 1} / ${MOBILE_SECTIONS.length}`;
+    }
+    if (mobilePrevBtn) {
+      mobilePrevBtn.disabled = idx <= 0;
+      if (mobilePrevLabel) {
+        mobilePrevLabel.textContent = idx > 0 ? getMobileTargetLabel(MOBILE_SECTIONS[idx - 1]) : "";
+      }
+    }
+    if (mobileNextBtn) {
+      mobileNextBtn.disabled = idx >= MOBILE_SECTIONS.length - 1;
+      if (mobileNextLabel) {
+        mobileNextLabel.textContent = idx < MOBILE_SECTIONS.length - 1 ? getMobileTargetLabel(MOBILE_SECTIONS[idx + 1]) : "";
+      }
+    }
+  }
+
+  function activateMobileSection(section, options) {
+    if (document.documentElement.getAttribute("data-page") !== "index") return;
+    const opts = Object.assign({ scroll: true, updateHash: true }, options);
+    const safeSection = MOBILE_SECTIONS.includes(section) ? section : "home";
+    activeMobileSection = safeSection;
+
+    document.querySelectorAll("main > section[data-mobile-section]").forEach((sec) => {
+      sec.classList.toggle("mobile-active", sec.getAttribute("data-mobile-section") === safeSection);
+    });
+
+    if (mobileNavMenu) {
+      mobileNavMenu.querySelectorAll(".mobile-nav-option[data-mobile-target]").forEach((item) => {
+        item.classList.toggle("active", item.getAttribute("data-mobile-target") === safeSection);
+      });
+    }
+
+    syncMobileNavLabels();
+
+    if (opts.updateHash) {
+      try {
+        const nextHash = safeSection === "home" ? "" : (SECTION_TO_HASH[safeSection] || "");
+        const url = new URL(window.location.href);
+        url.hash = nextHash;
+        window.history.replaceState({}, "", url.toString());
+      } catch (_) {}
+    }
+
+    if (opts.scroll) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  function closeLangMenu() {
     if (!switcher || !langBtn) return;
     switcher.classList.remove("open");
     langBtn.setAttribute("aria-expanded", "false");
   }
 
+  function closeMobileMenu() {
+    if (!mobileSwitcher || !mobileNavBtn) return;
+    mobileSwitcher.classList.remove("open");
+    mobileNavBtn.setAttribute("aria-expanded", "false");
+  }
+
   if (switcher && langBtn) {
     langBtn.addEventListener("click", (e) => {
       e.stopPropagation();
+      closeMobileMenu();
       const willOpen = !switcher.classList.contains("open");
       switcher.classList.toggle("open", willOpen);
       langBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
@@ -1083,22 +1205,94 @@
       opt.addEventListener("click", () => {
         const chosen = opt.getAttribute("data-lang");
         applyLanguage(chosen, true);
-        closeMenu();
+        closeLangMenu();
+      });
+    });
+  }
+
+  if (mobileSwitcher && mobileNavBtn && mobileNavMenu) {
+    mobileNavBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeLangMenu();
+      const willOpen = !mobileSwitcher.classList.contains("open");
+      mobileSwitcher.classList.toggle("open", willOpen);
+      mobileNavBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+
+    mobileNavMenu.querySelectorAll(".mobile-nav-option").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const target = item.getAttribute("data-mobile-target");
+        const page = document.documentElement.getAttribute("data-page") || "index";
+        if (page === "index" && MOBILE_SECTIONS.includes(target)) {
+          e.preventDefault();
+          activateMobileSection(target, { scroll: true, updateHash: true });
+        }
+        closeMobileMenu();
+      });
+    });
+  }
+
+  if (document.documentElement.getAttribute("data-page") === "index") {
+    const initialSection = HASH_TO_SECTION[window.location.hash] || "home";
+    activateMobileSection(initialSection, { scroll: false, updateHash: false });
+    if (isMobileViewport() && initialSection !== "home") {
+      window.scrollTo(0, 0);
+      window.addEventListener("load", () => {
+        if (isMobileViewport()) window.scrollTo(0, 0);
+      }, { once: true });
+    }
+
+    if (mobilePrevBtn) {
+      mobilePrevBtn.addEventListener("click", () => {
+        const idx = MOBILE_SECTIONS.indexOf(activeMobileSection);
+        if (idx > 0) {
+          activateMobileSection(MOBILE_SECTIONS[idx - 1], { scroll: true, updateHash: true });
+        }
+      });
+    }
+
+    if (mobileNextBtn) {
+      mobileNextBtn.addEventListener("click", () => {
+        const idx = MOBILE_SECTIONS.indexOf(activeMobileSection);
+        if (idx < MOBILE_SECTIONS.length - 1) {
+          activateMobileSection(MOBILE_SECTIONS[idx + 1], { scroll: true, updateHash: true });
+        }
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      if (anchor.closest("#mobileNavMenu")) return;
+      anchor.addEventListener("click", (e) => {
+        if (!isMobileViewport()) return;
+        const target = HASH_TO_SECTION[anchor.getAttribute("href")];
+        if (!target) return;
+        e.preventDefault();
+        activateMobileSection(target, { scroll: true, updateHash: true });
+        closeMobileMenu();
       });
     });
 
-    document.addEventListener("click", (e) => {
-      if (!switcher.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMenu();
-      }
+    window.addEventListener("hashchange", () => {
+      const target = HASH_TO_SECTION[window.location.hash] || "home";
+      activateMobileSection(target, { scroll: isMobileViewport(), updateHash: false });
     });
   }
+
+  document.addEventListener("click", (e) => {
+    if (switcher && !switcher.contains(e.target)) {
+      closeLangMenu();
+    }
+    if (mobileSwitcher && !mobileSwitcher.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeLangMenu();
+      closeMobileMenu();
+    }
+  });
 
   // Applica lingua iniziale (senza alterare cronologia o HTML se è 'it')
   const initialLang = getInitialLanguage();
@@ -1106,5 +1300,6 @@
     applyLanguage(initialLang, false);
   } else {
     syncInternalLinks("it");
+    syncMobileNavLabels();
   }
 })();
