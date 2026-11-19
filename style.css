@@ -1546,3 +1546,270 @@ footer.site-footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Interactive Bit-Perfect Signal Path Showcase
+   ========================================================================== */
+.signal-path-panel {
+  margin-top: 44px;
+  padding: clamp(24px, 4vw, 38px);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(160deg, rgba(255, 107, 0, 0.08) 0%, rgba(16, 19, 27, 0.94) 45%, rgba(11, 13, 19, 0.98) 100%);
+  border: 1px solid rgba(255, 122, 24, 0.32);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.signal-path-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.signal-path-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-light);
+  margin-bottom: 8px;
+}
+
+.signal-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+  animation: pulse 2.2s infinite;
+}
+
+.signal-path-head h3 {
+  font-size: clamp(1.32rem, 2.4vw, 1.72rem);
+  margin-bottom: 6px;
+}
+
+.signal-path-head p {
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  max-width: 620px;
+}
+
+.signal-mode-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+}
+
+.signal-mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 15px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.signal-mode-btn:hover {
+  color: var(--text-primary);
+}
+
+.signal-mode-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.signal-path-panel[data-signal-mode="wav"] .sp-flac-only {
+  display: none;
+}
+
+.signal-path-panel[data-signal-mode="flac"] .sp-wav-only {
+  display: none;
+}
+
+.signal-chain {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr) 36px minmax(0, 1fr) 36px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+}
+
+.signal-node {
+  position: relative;
+  padding: 20px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.signal-node:hover {
+  border-color: rgba(255, 133, 51, 0.45);
+  transform: translateY(-2px);
+}
+
+.signal-node-core {
+  background: linear-gradient(165deg, rgba(255, 107, 0, 0.14) 0%, rgba(255, 107, 0, 0.04) 100%);
+  border-color: rgba(255, 133, 51, 0.45);
+}
+
+.signal-node-out {
+  background: linear-gradient(165deg, rgba(34, 197, 94, 0.11) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border-color: rgba(34, 197, 94, 0.32);
+}
+
+.signal-node-step {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.signal-node-icon {
+  font-size: 1.45rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.signal-node-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-light);
+}
+
+.signal-node-out .signal-node-kicker {
+  color: #4ade80;
+}
+
+.signal-node-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.signal-node-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.signal-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.signal-line {
+  position: absolute;
+  left: 2px;
+  right: 8px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 107, 0, 0.25), rgba(255, 133, 51, 0.85));
+}
+
+.signal-arrow {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  background: #10131b;
+  padding: 0 3px;
+}
+
+.signal-path-note {
+  margin-top: 22px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.signal-note-badge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 107, 0, 0.16);
+  border: 1px solid rgba(255, 133, 51, 0.36);
+  color: var(--accent-light);
+}
+
+.signal-path-note p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .signal-chain {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .signal-connector {
+    height: 24px;
+  }
+
+  .signal-line {
+    left: 50%;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(255, 107, 0, 0.25), rgba(255, 133, 51, 0.85));
+  }
+
+  .signal-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 540px) {
+  .signal-mode-switch {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .signal-mode-btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}

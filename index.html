@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261119d">
+  <link rel="stylesheet" href="style.css?v=20261119e">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:site_name" content="MuStreamer">
@@ -358,6 +358,88 @@
             <p data-i18n="features.c6Desc">Eleganza pura in tonalità arancione e nero titanio. Tipografia pulita, miniature in altissima risoluzione e controlli studiati per essere intuitivi e fluidi.</p>
           </div>
         </div>
+
+        <!-- Interactive Bit-Perfect Signal Path Showcase -->
+        <div class="signal-path-panel" id="signalPathPanel" data-signal-mode="wav">
+          <div class="signal-path-head">
+            <div>
+              <div class="signal-path-eyebrow">
+                <span class="signal-live-dot" aria-hidden="true"></span>
+                <span data-i18n="signal.badge">PERCORSO DEL SEGNALE BIT-PERFECT</span>
+              </div>
+              <h3 data-i18n="signal.title">Come MuStreamer elimina i blocchi sugli streamer Hi-Fi</h3>
+              <p data-i18n="signal.subtitle">Confronta in tempo reale le due modalità del motore audio: scegli tra decodifica locale sul tuo Mac/iPhone o inoltro FLAC nativo verso il DAC dello streamer.</p>
+            </div>
+            <div class="signal-mode-switch" role="tablist" aria-label="Modalità Signal Path">
+              <button type="button" class="signal-mode-btn active" data-mode="wav" role="tab" aria-selected="true" data-i18n="signal.modeWav">⚡ WAV Bit-Perfect Locale</button>
+              <button type="button" class="signal-mode-btn" data-mode="flac" role="tab" aria-selected="false" data-i18n="signal.modeFlac">📡 FLAC Nativo Streamer</button>
+            </div>
+          </div>
+
+          <div class="signal-chain">
+            <!-- Stage 1 -->
+            <div class="signal-node">
+              <div class="signal-node-step">01</div>
+              <div class="signal-node-icon">💿</div>
+              <div class="signal-node-kicker" data-i18n="signal.s1Kicker">Sorgente Lossless</div>
+              <div class="signal-node-title" data-i18n="signal.s1Title">Qobuz • TIDAL • Radio • File</div>
+              <div class="signal-node-meta" data-i18n="signal.s1Meta">Master FLAC fino a 24-bit / 192 kHz</div>
+            </div>
+
+            <div class="signal-connector" aria-hidden="true">
+              <span class="signal-line"></span>
+              <span class="signal-arrow">→</span>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="signal-node signal-node-core">
+              <div class="signal-node-step">02</div>
+              <div class="signal-node-icon">⚙️</div>
+              <div class="signal-node-kicker" data-i18n="signal.s2Kicker">Motore MuStreamer</div>
+              <div class="signal-node-title sp-wav-only" data-i18n="signal.s2TitleWav">Decodifica Locale (Mac / iPhone)</div>
+              <div class="signal-node-title sp-flac-only" data-i18n="signal.s2TitleFlac">Proxy Pass-Through Diretto</div>
+              <div class="signal-node-meta sp-wav-only" data-i18n="signal.s2MetaWav">FLAC → PCM/WAV + Pre-buffer RAM</div>
+              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s2MetaFlac">Flusso FLAC intatto senza ricodifica</div>
+            </div>
+
+            <div class="signal-connector" aria-hidden="true">
+              <span class="signal-line"></span>
+              <span class="signal-arrow">→</span>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="signal-node">
+              <div class="signal-node-step">03</div>
+              <div class="signal-node-icon">📶</div>
+              <div class="signal-node-kicker" data-i18n="signal.s3Kicker">Trasporto Rete LAN / Wi-Fi</div>
+              <div class="signal-node-title sp-wav-only" data-i18n="signal.s3TitleWav">WAV Lineare Bit-Perfect</div>
+              <div class="signal-node-title sp-flac-only" data-i18n="signal.s3TitleFlac">FLAC Lossless Compresso</div>
+              <div class="signal-node-meta sp-wav-only" data-i18n="signal.s3MetaWav">Avvio ~0.2s • Carico CPU Streamer 0%</div>
+              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s3MetaFlac">Banda Wi-Fi ridotta • Decodifica su DAC</div>
+            </div>
+
+            <div class="signal-connector" aria-hidden="true">
+              <span class="signal-line"></span>
+              <span class="signal-arrow">→</span>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="signal-node signal-node-out">
+              <div class="signal-node-step">04</div>
+              <div class="signal-node-icon">🔊</div>
+              <div class="signal-node-kicker" data-i18n="signal.s4Kicker">Il Tuo Impianto Hi-Fi</div>
+              <div class="signal-node-title" data-i18n="signal.s4Title">Naim • UPnP • AirPlay • DAC USB</div>
+              <div class="signal-node-meta" data-i18n="signal.s4Meta">100% Bit-Perfect • Zero Resampling</div>
+            </div>
+          </div>
+
+          <div class="signal-path-note">
+            <span class="signal-note-badge sp-wav-only" data-i18n="signal.noteBadgeWav">IDEALE PER NAIM MU-SO 1ª GEN &amp; STREAMER LEGACY</span>
+            <span class="signal-note-badge sp-flac-only" data-i18n="signal.noteBadgeFlac">IDEALE PER STREAMER RECENTI &amp; WI-FI TRAFFICATO</span>
+            <p class="sp-wav-only" data-i18n="signal.noteTextWav">Spostando la decodifica FLAC su iPhone o Mac, lo streamer riceve campioni PCM/WAV pronti per il DAC: niente più lag, buffering o interruzioni sui master 24-bit/192 kHz.</p>
+            <p class="sp-flac-only" data-i18n="signal.noteTextFlac">Inoltra il flusso FLAC originale bit-per-bit lasciando che sia il processore interno del tuo streamer o DAC a decodificarlo, risparmiando banda sulla rete wireless.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -535,7 +617,27 @@
   </footer>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261119d"></script>
+  <script src="i18n.js?v=20261119e"></script>
+
+  <!-- Toggle interattivo Signal Path (WAV Locale vs FLAC Nativo) -->
+  <script>
+    (function () {
+      var panel = document.getElementById("signalPathPanel");
+      if (!panel) return;
+      var btns = panel.querySelectorAll(".signal-mode-btn");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var mode = btn.getAttribute("data-mode") || "wav";
+          panel.setAttribute("data-signal-mode", mode);
+          btns.forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle("active", active);
+            b.setAttribute("aria-selected", active ? "true" : "false");
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- Configurazione Link Ufficiale Apple App Store -->
   <script>
