@@ -694,6 +694,97 @@ section {
   font-size: 1.6rem;
   margin-bottom: 22px;
   border: 1px solid rgba(255, 107, 0, 0.25);
+  overflow: hidden;
+}
+
+.feature-icon.feature-icon-art {
+  padding: 0;
+  background: #0f1215;
+  border-color: rgba(255, 145, 45, 0.42);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.feature-icon.feature-icon-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-card-new {
+  border-color: rgba(255, 122, 24, 0.34);
+  background: linear-gradient(165deg, rgba(255, 107, 0, 0.08) 0%, var(--bg-surface) 48%);
+}
+
+.feature-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.feature-new-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: rgba(255, 107, 0, 0.16);
+  border: 1px solid rgba(255, 140, 40, 0.45);
+  white-space: nowrap;
+}
+
+/* v1.0.1 Highlights Strip inside Hero Mockup */
+.whats-new-strip {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(255, 107, 0, 0.06);
+  border: 1px solid rgba(255, 107, 0, 0.22);
+  border-radius: var(--radius-md);
+}
+
+.whats-new-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 107, 0, 0.18);
+  border: 1px solid rgba(255, 140, 40, 0.38);
+  white-space: nowrap;
+}
+
+.whats-new-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.whats-new-chip img {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 .feature-card h3 {
