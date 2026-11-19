@@ -41,7 +41,12 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+section[id],
+#download {
+  scroll-margin-top: 84px;
 }
 
 body {
@@ -51,8 +56,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
+  padding-top: 72px;
 }
 
 /* Background Ambient Glows */
@@ -135,8 +141,10 @@ a {
 
 /* Header & Navigation */
 header.site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background: var(--bg-glass);
   backdrop-filter: blur(20px);
@@ -1229,6 +1237,7 @@ footer.site-footer {
 }
 
 @media (max-width: 540px) {
+  body { padding-top: 62px; }
   .nav-container { height: 62px; }
   .container { padding: 0 14px; }
   .brand { font-size: 1.02rem; gap: 8px; }

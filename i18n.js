@@ -1645,7 +1645,18 @@
         const page = document.documentElement.getAttribute("data-page") || "index";
         if (page === "index" && MOBILE_SECTIONS.includes(target)) {
           e.preventDefault();
-          activateMobileSection(target, { scroll: true, updateHash: true });
+          if (isMobileViewport()) {
+            activateMobileSection(target, { scroll: true, updateHash: true });
+          } else {
+            activateMobileSection(target, { scroll: false, updateHash: true });
+            const hash = SECTION_TO_HASH[target];
+            const el = hash ? document.querySelector(hash) : null;
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            } else {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }
         }
         closeMobileMenu();
       });
