@@ -9,14 +9,14 @@
   const STORAGE_KEY = "mustreamer_lang";
 
   const LANG_META = {
-    it: { flag: "🇮🇹", code: "IT", name: "Italiano", aria: "Cambia lingua", menuAria: "Seleziona lingua", pagesAria: "Pagine del sito", pagerAria: "Navigazione pagine" },
-    en: { flag: "🇬🇧", code: "EN", name: "English", aria: "Change language", menuAria: "Select language", pagesAria: "Site pages", pagerAria: "Page navigation" },
-    fr: { flag: "🇫🇷", code: "FR", name: "Français", aria: "Changer de langue", menuAria: "Choisir la langue", pagesAria: "Pages du site", pagerAria: "Navigation des pages" },
-    de: { flag: "🇩🇪", code: "DE", name: "Deutsch", aria: "Sprache ändern", menuAria: "Sprache auswählen", pagesAria: "Seitenmenü", pagerAria: "Seitennavigation" },
-    es: { flag: "🇪🇸", code: "ES", name: "Español", aria: "Cambiar idioma", menuAria: "Seleccionar idioma", pagesAria: "Páginas del sitio", pagerAria: "Navegación de páginas" },
-    pt: { flag: "🇵🇹", code: "PT", name: "Português", aria: "Mudar idioma", menuAria: "Selecionar idioma", pagesAria: "Páginas do site", pagerAria: "Navegação de páginas" },
-    nl: { flag: "🇳🇱", code: "NL", name: "Nederlands", aria: "Taal wijzigen", menuAria: "Taal selecteren", pagesAria: "Sitepagina's", pagerAria: "Paginanavigatie" },
-    ja: { flag: "🇯🇵", code: "JA", name: "日本語", aria: "言語を変更", menuAria: "言語を選択", pagesAria: "サイトページ", pagerAria: "ページ移動" }
+    it: { flag: "🇮🇹", code: "IT", name: "Italiano", aria: "Cambia lingua", menuAria: "Seleziona lingua", pagesAria: "Pagine del sito", pagerAria: "Navigazione pagine", dock: { home: "Home", features: "Funzioni", tools: "Strumenti", community: "Forum", support: "Supporto" } },
+    en: { flag: "🇬🇧", code: "EN", name: "English", aria: "Change language", menuAria: "Select language", pagesAria: "Site pages", pagerAria: "Page navigation", dock: { home: "Home", features: "Features", tools: "Tools", community: "Forum", support: "Support" } },
+    fr: { flag: "🇫🇷", code: "FR", name: "Français", aria: "Changer de langue", menuAria: "Choisir la langue", pagesAria: "Pages du site", pagerAria: "Navigation des pages", dock: { home: "Accueil", features: "Fonctions", tools: "Outils", community: "Forum", support: "Support" } },
+    de: { flag: "🇩🇪", code: "DE", name: "Deutsch", aria: "Sprache ändern", menuAria: "Sprache auswählen", pagesAria: "Seitenmenü", pagerAria: "Seitennavigation", dock: { home: "Start", features: "Features", tools: "Tools", community: "Forum", support: "Support" } },
+    es: { flag: "🇪🇸", code: "ES", name: "Español", aria: "Cambiar idioma", menuAria: "Seleccionar idioma", pagesAria: "Páginas del sitio", pagerAria: "Navegación de páginas", dock: { home: "Inicio", features: "Funciones", tools: "Audio", community: "Foro", support: "Soporte" } },
+    pt: { flag: "🇵🇹", code: "PT", name: "Português", aria: "Mudar idioma", menuAria: "Selecionar idioma", pagesAria: "Páginas do site", pagerAria: "Navegação de páginas", dock: { home: "Início", features: "Funções", tools: "Áudio", community: "Fórum", support: "Suporte" } },
+    nl: { flag: "🇳🇱", code: "NL", name: "Nederlands", aria: "Taal wijzigen", menuAria: "Taal selecteren", pagesAria: "Sitepagina's", pagerAria: "Paginanavigatie", dock: { home: "Home", features: "Functies", tools: "Tools", community: "Forum", support: "Support" } },
+    ja: { flag: "🇯🇵", code: "JA", name: "日本語", aria: "言語を変更", menuAria: "言語を選択", pagesAria: "サイトページ", pagerAria: "ページ移動", dock: { home: "ホーム", features: "機能", tools: "計測", community: "掲示板", support: "サポート" } }
   };
 
   const TRANSLATIONS = {
@@ -1644,6 +1644,9 @@
     });
 
     syncInternalLinks(safeLang);
+    if (typeof syncMobileDock === "function") {
+      syncMobileDock(safeLang);
+    }
     if (typeof syncMobileNavLabels === "function") {
       syncMobileNavLabels();
     }
@@ -1759,6 +1762,10 @@
       });
     }
 
+    if (typeof syncMobileDockActive === "function") {
+      syncMobileDockActive();
+    }
+
     syncMobileNavLabels();
 
     if (opts.updateHash) {
@@ -1838,6 +1845,111 @@
     });
   }
 
+  // iOS-style Floating Bottom Tab Bar (visibile solo su schermi mobile <= 768px)
+  const DOCK_ITEMS = [
+    {
+      target: "home",
+      hrefIndex: "#home",
+      hrefSub: "index.html#home",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg>'
+    },
+    {
+      target: "features",
+      hrefIndex: "#features",
+      hrefSub: "index.html#features",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>'
+    },
+    {
+      target: "tools",
+      hrefIndex: "#audiophile-tools",
+      hrefSub: "index.html#audiophile-tools",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>'
+    },
+    {
+      target: "community",
+      hrefIndex: "community.html",
+      hrefSub: "community.html",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>'
+    },
+    {
+      target: "support",
+      hrefIndex: "support.html",
+      hrefSub: "support.html",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>'
+    }
+  ];
+
+  let iosBottomDock = null;
+
+  function ensureMobileDock() {
+    if (iosBottomDock) return iosBottomDock;
+    const page = document.documentElement.getAttribute("data-page") || "index";
+    const nav = document.createElement("nav");
+    nav.className = "ios-bottom-dock";
+    nav.id = "iosBottomDock";
+    nav.setAttribute("aria-label", "Navigazione rapida");
+
+    const inner = document.createElement("div");
+    inner.className = "ios-dock-inner";
+
+    DOCK_ITEMS.forEach((item) => {
+      const a = document.createElement("a");
+      a.className = "ios-dock-item";
+      a.setAttribute("data-dock-target", item.target);
+      a.setAttribute("href", page === "index" ? item.hrefIndex : item.hrefSub);
+      a.innerHTML = `<span class="ios-dock-icon">${item.icon}</span><span class="ios-dock-label"></span>`;
+
+      if (page === "index" && MOBILE_SECTIONS.includes(item.target)) {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          activateMobileSection(item.target, { scroll: true, updateHash: true });
+          closeMobileMenu();
+          closeLangMenu();
+        });
+      }
+
+      inner.appendChild(a);
+    });
+
+    nav.appendChild(inner);
+    document.body.appendChild(nav);
+    iosBottomDock = nav;
+    return nav;
+  }
+
+  function syncMobileDockActive() {
+    if (!iosBottomDock) return;
+    const page = document.documentElement.getAttribute("data-page") || "index";
+    const activeKey = page === "index" ? activeMobileSection : page;
+    iosBottomDock.querySelectorAll(".ios-dock-item").forEach((el) => {
+      const isMatch = el.getAttribute("data-dock-target") === activeKey;
+      el.classList.toggle("active", isMatch);
+      if (isMatch) {
+        el.setAttribute("aria-current", "page");
+      } else {
+        el.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function syncMobileDock(lang) {
+    const dock = ensureMobileDock();
+    const safeLang = isValidLang(lang) ? lang : "it";
+    const meta = LANG_META[safeLang];
+    const labels = (meta && meta.dock) || LANG_META.it.dock;
+    dock.setAttribute("aria-label", meta.pagesAria || "Navigazione");
+    dock.querySelectorAll(".ios-dock-item").forEach((el) => {
+      const target = el.getAttribute("data-dock-target");
+      const labelEl = el.querySelector(".ios-dock-label");
+      if (labelEl && labels[target]) {
+        labelEl.textContent = labels[target];
+      }
+    });
+    syncMobileDockActive();
+  }
+
+  ensureMobileDock();
+
   if (document.documentElement.getAttribute("data-page") === "index") {
     const initialSection = HASH_TO_SECTION[window.location.hash] || "home";
     activateMobileSection(initialSection, { scroll: false, updateHash: false });
@@ -1906,6 +2018,7 @@
     applyLanguage(initialLang, false);
   } else {
     syncInternalLinks("it");
+    syncMobileDock("it");
     syncMobileNavLabels();
   }
 })();
