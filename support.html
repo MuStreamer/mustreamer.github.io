@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261119f">
+  <link rel="stylesheet" href="style.css?v=20261125">
 </head>
 <body>
 
@@ -121,16 +121,17 @@
         <div class="mockup-card">
           <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-light);" data-i18n="support.q1Title">1. Come collego il mio streamer di rete o Naim Mu-so a MuStreamer?</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="support.q1Text">
-            Assicurati semplicemente che il tuo Mac o iPhone sia collegato alla <strong>stessa rete Wi-Fi o Ethernet</strong> dello streamer. All'apertura dell'app, MuStreamer scansiona automaticamente la rete tramite SSDP/UPnP e mostrerà il tuo dispositivo nella barra di selezione in alto (es. <em>Naim Mu-so</em> o qualsiasi MediaRenderer DLNA). Ti basta selezionarlo con un tocco.
+            Assicurati semplicemente che il tuo Mac, iPhone, iPad, PC Windows o smartphone Android sia collegato alla <strong>stessa rete Wi-Fi o Ethernet</strong> dello streamer. All'apertura dell'app, MuStreamer scansiona automaticamente la rete tramite SSDP/UPnP multi-scheda (inclusi Naim Mu-so 1ª/2ª gen, NDX 2, Linn, Cambridge, WiiM e DAC DLNA) mostrando anche nella Diagnostica se lo streamer è collegato via Ethernet o Wi-Fi.
           </p>
         </div>
 
         <div class="mockup-card">
-          <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-light);" data-i18n="support.q2Title">2. Come funziona la scelta tra decodifica sul dispositivo o sul DAC interno?</h3>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-light);" data-i18n="support.q2Title">2. Come funzionano le 3 modalità: FLAC Puro, Cloud Diretto e WAV Locale?</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="support.q2Text">
-            Dal nuovo pannello studio <em>Motore Audio Hi-Res</em> (accessibile anche direttamente dal player) o dalle Impostazioni, puoi scegliere la modalità di uscita e i parametri di streaming:
-            <br>&bull; <strong>WAV Bit-Perfect (Decodifica Locale)</strong>: Il Mac o l'iPhone decodifica in locale i flussi FLAC/Hi-Res (anche da file locali) e invia allo stereo un flusso PCM/WAV lineare non compresso. Ideale per streamer con CPU meno potenti.
-            <br>&bull; <strong>FLAC Nativo (Streamer)</strong>: Invia il flusso grezzo lasciando che sia lo streamer stesso a decodificarlo internamente, con controllo di frequenza massima (44.1–192 kHz), Pre-buffering RAM Zero-Jitter e padding 24-bit.
+            Dal pannello studio <em>Diagnostica &amp; Motore Audio</em> (accessibile anche dal player su Apple, Windows e Android) scegli tra <strong>3 modalità audiophile</strong>:
+            <br>&bull; <strong>WAV Locale (Decodifica LPCM + DSP 64-Bit)</strong>: L'app decodifica in RAM i flussi FLAC/Hi-Res (anche locali), applica EQ parametrico 64-bit, Crossfeed e Fase, e trasmette PCM/WAV non compresso con Seek Istantaneo HTTP Range. Ideale per streamer con CPU leggere.
+            <br>&bull; <strong>FLAC Puro (Pass-Through Streamer)</strong>: Ponte HTTP locale byte-per-byte senza decodifica né buffer RAM, preservando lo stream FLAC originale 24-bit/192 kHz fino allo streamer.
+            <br>&bull; <strong>Cloud Diretto (Zero-Proxy CDN)</strong>: Invio diretto dell'URL certificato allo streamer con carico CPU prossimo allo zero.
           </p>
         </div>
 
@@ -149,12 +150,12 @@
         </div>
 
         <div class="mockup-card">
-          <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-light);" data-i18n="support.q5NewTitle">5. Come funzionano Radio Live, Podcast e File Audio Locali (novità 1.0.1)?</h3>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-light);" data-i18n="support.q5NewTitle">5. Quali novità offrono Apple v1.1 e Windows / Android v1.2?</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="support.q5NewText">
-            Dalla versione 1.0.1 MuStreamer integra tre nuove sorgenti native utilizzabili su iPhone, Mac, AirPlay e streamer UPnP/DLNA:
-            <br>&bull; <strong>Radio Live</strong>: oltre 50.000 emittenti da 224 Paesi (inclusi stream FLAC lossless), 6 Preset rapidi P1–P6, URL personalizzati e backup/importazione <code>.M3U</code>.
-            <br>&bull; <strong>Podcast</strong>: classifiche Italia e Globali, ricerca istantanea, streaming diretto degli episodi integrali via feed RSS con salti <code>-15s / +30s</code> e Preferiti.
-            <br>&bull; <strong>File Audio Locali</strong>: riproduzione immediata di file <code>FLAC, WAV, AIFF, ALAC e MP3</code> dal dispositivo, da iCloud/File o da unità USB/Finder.
+            Con le nuove release <strong>MuStreamer v1.1 (macOS / iOS / iPadOS)</strong> e <strong>v1.2 (Windows 10/11 &amp; Android)</strong> arrivano:
+            <br>&bull; <strong>Supporto Windows 10/11 &amp; Android</strong>: interfaccia Liquid Glass scura, discovery UPnP/DLNA nativo multi-scheda, 3 modalità streaming, VU Meter, FFT, DSP 64-bit e passi volume precisi <code>&plusmn;5%</code>.
+            <br>&bull; <strong>Radio Live &amp; Podcast</strong>: oltre 50.000 emittenti da 224 Paesi (inclusi stream FLAC lossless), 6 Preset rapidi P1–P6, import/backup <code>.M3U</code>, Podcast RSS con salti <code>-15s / +30s</code>.
+            <br>&bull; <strong>File Audio Locali &amp; Seek Istantaneo</strong>: riproduzione immediata di <code>FLAC, WAV, AIFF, ALAC e MP3</code> con scorrimento rapido HTTP Range e telemetria Ethernet/Wi-Fi.
           </p>
         </div>
 
@@ -204,7 +205,7 @@
   </footer>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261119f"></script>
+  <script src="i18n.js?v=20261125"></script>
 
   <!-- Statistiche privacy-first (senza cookie) -->
   <script data-goatcounter="https://gian196.goatcounter.com/count"

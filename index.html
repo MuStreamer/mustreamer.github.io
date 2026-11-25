@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#08090c">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>MuStreamer 1.0.1 - Streaming Audiophile Bit-Perfect, Radio Live & Podcast per Mac e iPhone</title>
-  <meta id="metaDesc" name="description" content="MuStreamer 1.0.1 ridà vita al tuo impianto Hi-Fi: streaming Bit-Perfect 24-bit/192 kHz, Qobuz, TIDAL, 50.000+ Radio Live (anche FLAC), Podcast, File Audio Locali e strumenti di precisione (VU Meter, RTA, Fonometro).">
+  <title>MuStreamer 1.2 - Streaming Audiophile Bit-Perfect per Mac, iPhone, Windows & Android</title>
+  <meta id="metaDesc" name="description" content="MuStreamer è ora disponibile per Mac, iPhone, iPad, Windows 10/11 e Android: streaming Bit-Perfect 24-bit/192 kHz, 3 modalità (FLAC Puro, Cloud Diretto, WAV Locale), Qobuz, TIDAL, 50.000+ Radio FLAC, Podcast e strumenti Hi-Fi.">
   <meta name="apple-itunes-app" content="app-id=6834350144">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="jEijojMqZN0PzeMGrOBVJyZ8z1R-L2QBl49ekKjC9LM" />
@@ -19,19 +19,19 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261119f">
+  <link rel="stylesheet" href="style.css?v=20261125">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:site_name" content="MuStreamer">
-  <meta property="og:title" content="MuStreamer 1.0.1 - Streaming Hi-Fi Bit-Perfect, Radio & Podcast">
-  <meta property="og:description" content="Streaming audiophile Bit-Perfect per Qobuz, TIDAL, 50.000+ Radio Live FLAC, Podcast e File Locali su Mac, iPhone e streamer UPnP/DLNA come Naim Mu-so.">
+  <meta property="og:title" content="MuStreamer 1.2 - Streaming Hi-Fi Bit-Perfect per Mac, iPhone, Windows & Android">
+  <meta property="og:description" content="Ora anche su Windows 10/11 e Android! Streaming Bit-Perfect 24-bit/192 kHz per Qobuz, TIDAL, 50.000+ Radio Live FLAC, Podcast, File Locali e streamer UPnP/DLNA.">
   <meta property="og:url" content="https://mustreamer.github.io/">
-  <meta property="og:image" content="https://mustreamer.github.io/assets/icon.png">
+  <meta property="og:image" content="https://mustreamer.github.io/assets/windows-showcase.png">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MuStreamer 1.0.1 - Streaming Hi-Fi Bit-Perfect, Radio & Podcast">
-  <meta name="twitter:description" content="Streaming audiophile Bit-Perfect per Qobuz, TIDAL, 50.000+ Radio Live FLAC, Podcast e File Locali su Mac e iPhone.">
-  <meta name="twitter:image" content="https://mustreamer.github.io/assets/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MuStreamer 1.2 - Ora su Windows & Android oltre a Mac e iPhone">
+  <meta name="twitter:description" content="Streaming audiophile Bit-Perfect fino a 24-bit/192 kHz per Qobuz, TIDAL, Radio FLAC, Podcast e File Locali su Mac, iPhone, iPad, Windows 10/11 e Android.">
+  <meta name="twitter:image" content="https://mustreamer.github.io/assets/windows-showcase.png">
 
   <!-- Structured Data (Google Rich Results / Site Name) -->
   <script type="application/ld+json">
@@ -48,13 +48,13 @@
         "@type": "SoftwareApplication",
         "name": "MuStreamer",
         "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "macOS 14.0+, iOS 17.0+",
+        "operatingSystem": "macOS 14.0+, iOS 17.0+, Windows 10/11 (64-bit), Android 8.0+",
         "url": "https://mustreamer.github.io/",
         "downloadUrl": "https://apps.apple.com/app/mustreamer/id6834350144",
         "installUrl": "https://mustreamer.github.io/downloads/MuStreamer-macOS.dmg",
-        "softwareVersion": "1.0.1",
+        "softwareVersion": "1.2.0",
         "image": "https://mustreamer.github.io/assets/icon.png",
-        "description": "Riproduttore audiophile Bit-Perfect fino a 24-bit/192 kHz con integrazione nativa Qobuz e TIDAL, 50.000+ Radio Live FLAC, Podcast universali, File Locali Hi-Res, decodifica locale offload UPnP/DLNA e strumenti Hi-Fi.",
+        "description": "Riproduttore audiophile Bit-Perfect fino a 24-bit/192 kHz per Mac, iPhone, iPad, Windows 10/11 e Android con integrazione nativa Qobuz e TIDAL, 50.000+ Radio Live FLAC, Podcast universali, File Locali Hi-Res, 3 modalità di streaming UPnP/DLNA (FLAC Puro, Cloud Diretto, WAV Locale) e strumenti Hi-Fi.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -87,6 +87,10 @@
         <div class="mobile-nav-menu" id="mobileNavMenu" role="menu">
           <a href="#home" class="mobile-nav-option active" data-mobile-target="home" role="menuitem">
             <span class="mobile-nav-opt-label" data-i18n="footer.home">Home</span>
+            <span class="mobile-nav-opt-dot" aria-hidden="true"></span>
+          </a>
+          <a href="#platforms" class="mobile-nav-option" data-mobile-target="home" role="menuitem">
+            <span class="mobile-nav-opt-label" data-i18n="nav.platforms">Windows &amp; Android</span>
             <span class="mobile-nav-opt-dot" aria-hidden="true"></span>
           </a>
           <a href="#features" class="mobile-nav-option" data-mobile-target="features" role="menuitem">
@@ -125,6 +129,7 @@
         <span>Mu<span class="text-accent">Streamer</span></span>
       </a>
       <ul class="nav-links">
+        <li><a href="#platforms" data-i18n="nav.platforms">Windows &amp; Android</a></li>
         <li><a href="#features" data-i18n="nav.features">Caratteristiche</a></li>
         <li><a href="#audiophile-tools" data-i18n="nav.tools">Strumenti Hi-Fi</a></li>
         <li><a href="#story" data-i18n="nav.story">La Nostra Storia</a></li>
@@ -161,13 +166,13 @@
       <div class="container hero-content">
         <div class="badge">
           <span class="badge-pulse"></span>
-          <span data-i18n="hero.badge">Nuova v1.0.1 • Hi-Res Bit-Perfect, Radio Live &amp; Podcast</span>
+          <span data-i18n="hero.badge">Novità v1.2 • Ora anche su Windows &amp; Android!</span>
         </div>
         
         <h1 data-i18n="hero.title">Nuova vita al tuo impianto Hi-Fi.<br><span class="text-gradient">Zero compromessi sonori.</span></h1>
         
         <p class="lead" data-i18n="hero.lead">
-          MuStreamer è il riproduttore audiophile definitivo per Mac e iPhone. Unisce la purezza <strong>Bit-Perfect 24-bit/192 kHz</strong> di <strong>Qobuz</strong>, <strong>TIDAL</strong> e <strong>File Audio Locali</strong> a <strong>50.000+ Radio Live (anche FLAC)</strong> e <strong>Podcast universali</strong>, con decodifica locale intelligente per il tuo streamer UPnP.
+          MuStreamer è il riproduttore audiophile definitivo ora disponibile su <strong>Mac, iPhone, iPad, Windows 10/11 e Android</strong>. Unisce la purezza <strong>Bit-Perfect 24-bit/192 kHz</strong> di <strong>Qobuz</strong>, <strong>TIDAL</strong> e <strong>File Locali</strong> a <strong>50.000+ Radio Live FLAC</strong> e <strong>Podcast</strong>, con 3 modalità di streaming (<em>FLAC Puro</em>, <em>Cloud Diretto</em>, <em>WAV Locale</em>) per il tuo streamer UPnP.
         </p>
 
         <div class="hero-actions" id="download">
@@ -198,16 +203,34 @@
             </div>
           </a>
 
+          <!-- Windows 10/11 (64-bit) CTA -->
+          <a href="#platforms" class="app-store-btn hero-cta-windows" data-platform-cta="windows" data-goatcounter-click="click-windows-cta" data-goatcounter-title="Click Windows 10/11">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.45L10.94 4.3V11.3H3V5.45ZM11.96 4.14L21 2.8V11.3H11.96V4.14ZM3 12.3H10.94V19.35L3 18.2V12.3ZM11.96 12.3H21V20.85L11.96 19.5V12.3Z"/></svg>
+            <div class="app-store-btn-text">
+              <span class="caption" data-i18n="hero.winCaption">Nuovo per PC</span>
+              <span class="store-name">Windows 10/11</span>
+            </div>
+          </a>
+
+          <!-- Android (Google Play / APK) CTA -->
+          <a href="#platforms" class="app-store-btn hero-cta-android" data-platform-cta="android" data-goatcounter-click="click-android-cta" data-goatcounter-title="Click Android">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.64.64 0 0 0-.87-.24.64.64 0 0 0-.22.87l1.84 3.18C3.57 11.02 1.71 13.86 1.5 17.2h21c-.21-3.34-2.07-6.18-4.9-7.72zM7 14.75a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+            <div class="app-store-btn-text">
+              <span class="caption" data-i18n="hero.andCaption">Nuovo Smartphone</span>
+              <span class="store-name">Android (APK / Play)</span>
+            </div>
+          </a>
+
           <a href="#features" class="btn-secondary hero-cta-discover" data-i18n="hero.discoverBtn">
             Scopri le Funzionalità
           </a>
         </div>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Disponibile su macOS 14+ (Sonoma/Sequoia) e iOS 17+. Compatibile con protocolli standard UPnP / DLNA.</p>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Disponibile per <strong>macOS 14+</strong>, <strong>iOS &amp; iPadOS 17+</strong>, <strong>Windows 10/11 (64-bit)</strong> e <strong>Android 8.0+</strong> &bull; UPnP / DLNA Bit-Perfect.</p>
         <p class="hero-mac-tip" data-i18n="hero.macTip">Mac: apri il file <code>.dmg</code> e trascina <strong>MuStreamer</strong> in Applicazioni. Al primo avvio, se richiesto da macOS, vai in <em>Impostazioni di Sistema &rarr; Privacy e sicurezza &rarr; Apri comunque</em>.</p>
         
-        <div class="coming-soon-badge">
+        <div class="coming-soon-badge ecosystem-live-badge">
           <span class="dot"></span>
-          <span data-i18n="hero.comingSoon">Presto su <strong>Windows</strong> e <strong>Android</strong>...</span>
+          <span data-i18n="hero.comingSoon">Disponibile ora su <strong>Mac, iPhone, iPad, Windows &amp; Android</strong>!</span>
         </div>
       </div>
 
@@ -256,7 +279,10 @@
               </div>
 
               <div class="whats-new-strip">
-                <span class="whats-new-label" data-i18n="mockup.newLabel">Novità v1.0.1</span>
+                <span class="whats-new-label" data-i18n="mockup.newLabel">Novità v1.2</span>
+                <span class="whats-new-chip">
+                  <span data-i18n="mockup.newWinAnd">🪟 Windows 10/11 &amp; 🤖 Android</span>
+                </span>
                 <span class="whats-new-chip">
                   <img src="assets/radio-mode.png" alt="Radio Live">
                   <span data-i18n="mockup.newRadio">50.000+ Radio Live &amp; FLAC</span>
@@ -266,10 +292,69 @@
                   <span data-i18n="mockup.newPodcast">Podcast &amp; Puntate del Giorno</span>
                 </span>
                 <span class="whats-new-chip" data-i18n="mockup.newLocal">📁 File Locali Hi-Res</span>
-                <span class="whats-new-chip" data-i18n="mockup.newEngine">⚙️ Motore WAV / FLAC 192 kHz</span>
+                <span class="whats-new-chip" data-i18n="mockup.newEngine">⚙️ 3 Modalità: FLAC Puro • Cloud • WAV</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- New Cross-Platform Windows & Android Showcase inside Home section -->
+      <div class="container platforms-section" id="platforms">
+        <div class="section-head">
+          <span class="badge" data-i18n="plat.badge">Grande Novità • Ecosistema Completo</span>
+          <h2 data-i18n="plat.title">Ora Disponibile anche su <span class="text-gradient">Windows &amp; Android</span></h2>
+          <p data-i18n="plat.subtitle">Portiamo l'intero motore Bit-Perfect 24-bit/192 kHz, le 3 modalità audiophile e la suite da studio su PC Windows e smartphone/tablet Android, in aggiunta a Mac, iPhone e iPad.</p>
+          <div class="platforms-pill-row">
+            <span class="platform-chip">🍎 macOS 14+</span>
+            <span class="platform-chip">📱 iOS &amp; iPadOS 17+</span>
+            <span class="platform-chip is-new" data-i18n="plat.chipWin">🪟 Windows 10/11 (Nuovo v1.2)</span>
+            <span class="platform-chip is-new" data-i18n="plat.chipAnd">🤖 Android 8.0+ (Nuovo v1.2)</span>
+          </div>
+        </div>
+
+        <div class="platforms-grid">
+          <article class="platform-card">
+            <div class="platform-card-head">
+              <span class="platform-tag" data-i18n="plat.winTag">DESKTOP WINDOWS • 64-BIT</span>
+              <span class="platform-os-label">Windows 10 / Windows 11</span>
+            </div>
+            <h3 data-i18n="plat.winTitle">MuStreamer per Windows Desktop</h3>
+            <p data-i18n="plat.winDesc">Controlla il tuo impianto Hi-Fi direttamente da PC Windows con la stessa interfaccia Liquid Glass scura, discovery SSDP multi-scheda (Ethernet + Wi-Fi) e proxy audio lossless locale integrato.</p>
+            <div class="platform-shot-wrap">
+              <img src="assets/windows-showcase.png" alt="MuStreamer su Windows 10/11" loading="lazy">
+            </div>
+            <ul class="platform-bullets">
+              <li data-i18n="plat.winB1">3 Modalità: <strong>FLAC Puro</strong> (Pass-Through), <strong>Cloud Diretto</strong> e <strong>WAV Locale + DSP 64-bit</strong></li>
+              <li data-i18n="plat.winB2">Scansione automatica multi-scheda LAN/VPN con diagnostica Ethernet e ping live</li>
+              <li data-i18n="plat.winB3">VU Meter vintage, Spettro FFT, Dynamic Range (DR), EQ 10 bande e Mini-Player desktop</li>
+            </ul>
+            <div class="platform-card-foot">
+              <button type="button" class="platform-action-btn" data-platform-cta="windows" data-i18n="plat.winBtn">Scarica / Info Windows v1.2</button>
+              <span class="platform-os-label" data-i18n="plat.winReq">x64 Native • UPnP / DLNA</span>
+            </div>
+          </article>
+
+          <article class="platform-card">
+            <div class="platform-card-head">
+              <span class="platform-tag" data-i18n="plat.andTag">APP ANDROID HI-RES</span>
+              <span class="platform-os-label">Android 8.0+ (ARM64)</span>
+            </div>
+            <h3 data-i18n="plat.andTitle">MuStreamer per Smartphone &amp; Tablet Android</h3>
+            <p data-i18n="plat.andDesc">Porta in tasca Qobuz Studio Master, TIDAL Max, 50.000+ Radio FLAC, Podcast e la tua libreria locale con trasmissione Bit-Perfect 24-bit/192 kHz verso Naim Mu-so e qualsiasi streamer UPnP.</p>
+            <div class="platform-shot-wrap">
+              <img src="assets/android-showcase.png" alt="MuStreamer su Android" loading="lazy">
+            </div>
+            <ul class="platform-bullets">
+              <li data-i18n="plat.andB1">Controllo volume hardware ultra-preciso a passi <strong>&plusmn;5%</strong> e Seek Istantaneo HTTP Range</li>
+              <li data-i18n="plat.andB2">Coda gapless continua, copertine in alta risoluzione e 6 Preset Radio P1–P6</li>
+              <li data-i18n="plat.andB3">Monitoraggio jitter Wi-Fi in tempo reale e stato collegamento streamer Ethernet/Wi-Fi</li>
+            </ul>
+            <div class="platform-card-foot">
+              <button type="button" class="platform-action-btn" data-platform-cta="android" data-i18n="plat.andBtn">Ottieni per Android v1.2</button>
+              <span class="platform-os-label" data-i18n="plat.andReq">Smartphone &amp; Tablet</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -278,7 +363,7 @@
     <section id="features" data-mobile-section="features">
       <div class="container">
         <div class="section-head">
-          <span class="badge" data-i18n="features.badge">Ingegneria Acustica • v1.0.1</span>
+          <span class="badge" data-i18n="features.badge">Ingegneria Acustica • Apple v1.1 &amp; Win/Android v1.2</span>
           <h2 data-i18n="features.title">Progettato da e per Audiofili</h2>
           <p data-i18n="features.subtitle">Tutte le sorgenti e le tecnologie per superare i limiti dei vecchi protocolli e godere di ogni sfumatura sonora.</p>
         </div>
@@ -373,8 +458,9 @@
               <p data-i18n="signal.subtitle">Confronta in tempo reale le due modalità del motore audio: scegli tra decodifica locale sul tuo Mac/iPhone o inoltro FLAC nativo verso il DAC dello streamer.</p>
             </div>
             <div class="signal-mode-switch" role="tablist" aria-label="Modalità Signal Path">
-              <button type="button" class="signal-mode-btn active" data-mode="wav" role="tab" aria-selected="true" data-i18n="signal.modeWav">⚡ WAV Bit-Perfect Locale</button>
-              <button type="button" class="signal-mode-btn" data-mode="flac" role="tab" aria-selected="false" data-i18n="signal.modeFlac">📡 FLAC Nativo Streamer</button>
+              <button type="button" class="signal-mode-btn active" data-mode="wav" role="tab" aria-selected="true" data-i18n="signal.modeWav">⚡ WAV Locale (DSP 64-Bit)</button>
+              <button type="button" class="signal-mode-btn" data-mode="flac" role="tab" aria-selected="false" data-i18n="signal.modeFlac">📡 FLAC Puro (Pass-Through)</button>
+              <button type="button" class="signal-mode-btn" data-mode="cloud" role="tab" aria-selected="false" data-i18n="signal.modeCloud">☁️ Cloud Diretto CDN</button>
             </div>
           </div>
 
@@ -398,10 +484,12 @@
               <div class="signal-node-step">02</div>
               <div class="signal-node-icon">⚙️</div>
               <div class="signal-node-kicker" data-i18n="signal.s2Kicker">Motore MuStreamer</div>
-              <div class="signal-node-title sp-wav-only" data-i18n="signal.s2TitleWav">Decodifica Locale (Mac / iPhone)</div>
-              <div class="signal-node-title sp-flac-only" data-i18n="signal.s2TitleFlac">Proxy Pass-Through Diretto</div>
-              <div class="signal-node-meta sp-wav-only" data-i18n="signal.s2MetaWav">FLAC → PCM/WAV + Pre-buffer RAM</div>
-              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s2MetaFlac">Flusso FLAC intatto senza ricodifica</div>
+              <div class="signal-node-title sp-wav-only" data-i18n="signal.s2TitleWav">Decodifica Locale + DSP 64-Bit</div>
+              <div class="signal-node-title sp-flac-only" data-i18n="signal.s2TitleFlac">Proxy HTTP FLAC Pass-Through</div>
+              <div class="signal-node-title sp-cloud-only" data-i18n="signal.s2TitleCloud">Handover Diretto CDN → Streamer</div>
+              <div class="signal-node-meta sp-wav-only" data-i18n="signal.s2MetaWav">FLAC → PCM/WAV + EQ, Fase &amp; Range Seek</div>
+              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s2MetaFlac">Ponte byte-per-byte senza ricodifica RAM</div>
+              <div class="signal-node-meta sp-cloud-only" data-i18n="signal.s2MetaCloud">Zero proxy locale &bull; URL certificato CDN</div>
             </div>
 
             <div class="signal-connector" aria-hidden="true">
@@ -416,8 +504,10 @@
               <div class="signal-node-kicker" data-i18n="signal.s3Kicker">Trasporto Rete LAN / Wi-Fi</div>
               <div class="signal-node-title sp-wav-only" data-i18n="signal.s3TitleWav">WAV Lineare Bit-Perfect</div>
               <div class="signal-node-title sp-flac-only" data-i18n="signal.s3TitleFlac">FLAC Lossless Compresso</div>
+              <div class="signal-node-title sp-cloud-only" data-i18n="signal.s3TitleCloud">Stream Diretto HTTPS → DAC</div>
               <div class="signal-node-meta sp-wav-only" data-i18n="signal.s3MetaWav">Avvio ~0.2s • Carico CPU Streamer 0%</div>
-              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s3MetaFlac">Banda Wi-Fi ridotta • Decodifica su DAC</div>
+              <div class="signal-node-meta sp-flac-only" data-i18n="signal.s3MetaFlac">Banda LAN leggera • Decodifica su DAC</div>
+              <div class="signal-node-meta sp-cloud-only" data-i18n="signal.s3MetaCloud">Carico app minimo • Batteria al top</div>
             </div>
 
             <div class="signal-connector" aria-hidden="true">
@@ -436,10 +526,12 @@
           </div>
 
           <div class="signal-path-note">
-            <span class="signal-note-badge sp-wav-only" data-i18n="signal.noteBadgeWav">IDEALE PER NAIM MU-SO 1ª GEN &amp; STREAMER LEGACY</span>
-            <span class="signal-note-badge sp-flac-only" data-i18n="signal.noteBadgeFlac">IDEALE PER STREAMER RECENTI &amp; WI-FI TRAFFICATO</span>
-            <p class="sp-wav-only" data-i18n="signal.noteTextWav">Spostando la decodifica FLAC su iPhone o Mac, lo streamer riceve campioni PCM/WAV pronti per il DAC: niente più lag, buffering o interruzioni sui master 24-bit/192 kHz.</p>
-            <p class="sp-flac-only" data-i18n="signal.noteTextFlac">Inoltra il flusso FLAC originale bit-per-bit lasciando che sia il processore interno del tuo streamer o DAC a decodificarlo, risparmiando banda sulla rete wireless.</p>
+            <span class="signal-note-badge sp-wav-only" data-i18n="signal.noteBadgeWav">IDEALE PER NAIM MU-SO 1ª GEN &amp; DSP 64-BIT</span>
+            <span class="signal-note-badge sp-flac-only" data-i18n="signal.noteBadgeFlac">IDEALE PER STREAMER HI-FI &amp; RETI ETHERNET/WI-FI</span>
+            <span class="signal-note-badge sp-cloud-only" data-i18n="signal.noteBadgeCloud">IDEALE PER STREAMER MODERNI &amp; ASCOLTO CONTINUO</span>
+            <p class="sp-wav-only" data-i18n="signal.noteTextWav">Spostando la decodifica FLAC su Mac, iPhone, Windows o Android, lo streamer riceve campioni PCM/WAV pronti per il DAC con EQ parametrico a 64-bit e Seek Istantaneo HTTP Range.</p>
+            <p class="sp-flac-only" data-i18n="signal.noteTextFlac">Inoltra il flusso FLAC originale bit-per-byte attraverso il ponte HTTP locale senza buffer in RAM: compatibile anche con streamer legacy (incluso audio/x-flac per Mu-so 1st Gen).</p>
+            <p class="sp-cloud-only" data-i18n="signal.noteTextCloud">Collega direttamente lo streamer compatibile ai server CDN lossless riducendo al minimo il consumo di batteria e rete del telefono o PC.</p>
           </div>
         </div>
       </div>
@@ -560,15 +652,15 @@
             <tr>
               <td data-i18n="specs.r5Label">Piattaforme</td>
               <td>
-                <strong>macOS 14.0+</strong> (Apple Silicon & Intel) &bull; <strong>iOS 17.0+</strong> (iPhone & iPad)
-                <div style="margin-top: 6px; font-size: 0.85rem; color: var(--accent-light);" data-i18n="specs.r5Soon">
-                  ⏳ Presto disponibile anche per <strong>Windows</strong> e <strong>Android</strong>
+                <strong>macOS 14.0+</strong> (Apple Silicon &amp; Intel) &bull; <strong>iOS &amp; iPadOS 17.0+</strong>
+                <div style="margin-top: 6px; font-size: 0.9rem; color: #4ade80; font-weight: 600;" data-i18n="specs.r5Soon">
+                  🪟 <strong>Windows 10/11 (64-bit)</strong> &bull; 🤖 <strong>Android 8.0+</strong> — Ora disponibili (v1.2)!
                 </div>
               </td>
             </tr>
             <tr>
               <td data-i18n="specs.r6Label">Lingue &amp; Versione</td>
-              <td data-i18n="specs.r6Val"><strong>8 lingue</strong> (IT, EN, FR, DE, ES, PT, NL, JA) &bull; Versione attuale <strong>1.0.1</strong></td>
+              <td data-i18n="specs.r6Val"><strong>8 lingue</strong> (IT, EN, FR, DE, ES, PT, NL, JA) &bull; <strong>Apple v1.1.0</strong> &bull; <strong>Windows &amp; Android v1.2.0</strong></td>
             </tr>
             
           </tbody>
@@ -618,10 +710,25 @@
     </div>
   </footer>
 
-  <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261119f"></script>
+  <!-- Platform Release Modal (Windows 10/11 & Android) -->
+  <div class="platform-modal-backdrop" id="platformReleaseModal" role="dialog" aria-modal="true" aria-labelledby="platformModalTitle">
+    <div class="platform-modal">
+      <button type="button" class="platform-modal-close" id="platformModalClose" aria-label="Chiudi">&times;</button>
+      <span class="platform-tag" id="platformModalTag">WINDOWS &amp; ANDROID v1.2</span>
+      <h3 id="platformModalTitle">MuStreamer v1.2</h3>
+      <p id="platformModalBody"></p>
+      <div class="platform-modal-reqs" id="platformModalReqs"></div>
+      <div class="platform-modal-actions">
+        <a id="platformModalMail" href="mailto:mustreamer@outlook.it" class="platform-action-btn" data-i18n="modal.contactBtn">Richiedi Link / Supporto</a>
+        <a href="support.html" class="btn-secondary" style="padding: 10px 16px; font-size: 0.9rem;" data-i18n="modal.guideBtn">Guida &amp; FAQ</a>
+      </div>
+    </div>
+  </div>
 
-  <!-- Toggle interattivo Signal Path (WAV Locale vs FLAC Nativo) -->
+  <!-- Multilingua i18n -->
+  <script src="i18n.js?v=20261125"></script>
+
+  <!-- Toggle interattivo Signal Path (WAV Locale / FLAC Puro / Cloud Diretto) -->
   <script>
     (function () {
       var panel = document.getElementById("signalPathPanel");
@@ -641,10 +748,13 @@
     })();
   </script>
 
-  <!-- Configurazione Link Ufficiale Apple App Store -->
+  <!-- Configurazione Link Ufficiali Store & Download Multipiattaforma -->
   <script>
     // Link ufficiale pubblicato su Apple App Store (iOS, iPadOS & macOS Universal)
     const APPLE_APP_STORE_ID = "6834350144";
+    // Inserisci qui gli URL pubblici appena pubblicati sugli store (se vuoti, apre la scheda informativa v1.2)
+    const WINDOWS_DOWNLOAD_URL = "";
+    const ANDROID_PLAY_STORE_URL = "";
 
     const appStoreTargetURL = APPLE_APP_STORE_ID && APPLE_APP_STORE_ID.trim() !== ""
       ? `https://apps.apple.com/app/mustreamer/id${APPLE_APP_STORE_ID.trim()}`
@@ -653,6 +763,65 @@
     document.querySelectorAll(".app-store-link").forEach(btn => {
       btn.href = appStoreTargetURL;
     });
+
+    (function () {
+      const backdrop = document.getElementById("platformReleaseModal");
+      if (!backdrop) return;
+      const closeBtn = document.getElementById("platformModalClose");
+      const tagEl = document.getElementById("platformModalTag");
+      const titleEl = document.getElementById("platformModalTitle");
+      const bodyEl = document.getElementById("platformModalBody");
+      const reqsEl = document.getElementById("platformModalReqs");
+      const mailEl = document.getElementById("platformModalMail");
+
+      function trOr(key, fallback) {
+        const lang = document.documentElement.lang || "it";
+        if (window.MUSTREAMER_I18N && window.MUSTREAMER_I18N[lang] && window.MUSTREAMER_I18N[lang][key]) {
+          return window.MUSTREAMER_I18N[lang][key];
+        }
+        return fallback;
+      }
+
+      function openModal(platform) {
+        if (platform === "windows") {
+          tagEl.textContent = "WINDOWS 10 / 11 • v1.2.0";
+          titleEl.textContent = trOr("modal.winTitle", "MuStreamer v1.2 per Windows Desktop");
+          bodyEl.textContent = trOr("modal.winBody", "La build desktop Windows 10/11 (64-bit) è pronta con la release v1.2: include discovery UPnP multi-scheda, 3 modalità streaming Bit-Perfect (FLAC Puro, Cloud Diretto, WAV Locale + DSP 64-bit) e strumenti da studio. I link pubblici sono in fase di pubblicazione: scrivici per ricevere subito il pacchetto o il link diretto.");
+          reqsEl.innerHTML = trOr("modal.winReqs", "<strong>Requisiti:</strong> Windows 10 / 11 (x64) &bull; Rete LAN Wi-Fi o Ethernet verso lo streamer UPnP/DLNA");
+          mailEl.href = "mailto:mustreamer@outlook.it?subject=MuStreamer%20Windows%201.2%20Download";
+        } else {
+          tagEl.textContent = "ANDROID 8.0+ • v1.2.0";
+          titleEl.textContent = trOr("modal.andTitle", "MuStreamer v1.2 per Android");
+          bodyEl.textContent = trOr("modal.andBody", "L'app Android è in fase di rilascio su Google Play con la versione v1.2: streaming Bit-Perfect 24-bit/192 kHz su Naim Mu-so e UPnP/DLNA, passi volume ±5%, Seek Istantaneo, 50.000+ Radio FLAC e diagnostica Wi-Fi. Scrivici per accedere subito al build / Play Store testing.");
+          reqsEl.innerHTML = trOr("modal.andReqs", "<strong>Requisiti:</strong> Android 8.0 o superiore (ARM64) &bull; Smartphone o Tablet su Wi-Fi locale");
+          mailEl.href = "mailto:mustreamer@outlook.it?subject=MuStreamer%20Android%201.2%20Download";
+        }
+        backdrop.classList.add("open");
+      }
+
+      document.querySelectorAll("[data-platform-cta]").forEach(el => {
+        const p = el.getAttribute("data-platform-cta");
+        if (p === "windows" && WINDOWS_DOWNLOAD_URL) {
+          if (el.tagName === "A") { el.href = WINDOWS_DOWNLOAD_URL; el.target = "_blank"; el.rel = "noopener"; return; }
+        }
+        if (p === "android" && ANDROID_PLAY_STORE_URL) {
+          if (el.tagName === "A") { el.href = ANDROID_PLAY_STORE_URL; el.target = "_blank"; el.rel = "noopener"; return; }
+        }
+        el.addEventListener("click", function (e) {
+          const url = p === "windows" ? WINDOWS_DOWNLOAD_URL : ANDROID_PLAY_STORE_URL;
+          if (url) {
+            window.open(url, "_blank", "noopener");
+            return;
+          }
+          e.preventDefault();
+          openModal(p);
+        });
+      });
+
+      closeBtn.addEventListener("click", () => backdrop.classList.remove("open"));
+      backdrop.addEventListener("click", (e) => { if (e.target === backdrop) backdrop.classList.remove("open"); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") backdrop.classList.remove("open"); });
+    })();
   </script>
 
   <!-- Statistiche privacy-first (senza cookie) -->
