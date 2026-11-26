@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#08090c">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <h1 align="center">SITO IN MANUTENZIONE, POTREBBERO ESSERCI PROBLEMI DI UTILIZZO</h1>
   <title>MuStreamer 1.2 - Streaming Audiophile Bit-Perfect per Mac, iPhone, Windows & Android</title>
   <meta id="metaDesc" name="description" content="MuStreamer è ora disponibile per Mac, iPhone, iPad, Windows 10/11 e Android: streaming Bit-Perfect 24-bit/192 kHz, 3 modalità (FLAC Puro, Cloud Diretto, WAV Locale), Qobuz, TIDAL, 50.000+ Radio FLAC, Podcast e strumenti Hi-Fi.">
   <meta name="apple-itunes-app" content="app-id=6834350144">
@@ -20,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261125b">
+  <link rel="stylesheet" href="style.css?v=20261126">
   
   <!-- Open Graph / Meta Social -->
   <meta property="og:site_name" content="MuStreamer">
@@ -83,6 +82,7 @@
             <line x1="4" y1="12" x2="20" y2="12"></line>
             <line x1="4" y1="18" x2="20" y2="18"></line>
           </svg>
+          <span class="menu-btn-label" data-i18n="nav.menu">Menu</span>
           <span class="sr-only" id="currentMobilePage" data-i18n="footer.home">Home</span>
         </button>
         <div class="mobile-nav-menu" id="mobileNavMenu" role="menu">
@@ -226,6 +226,10 @@
             Scopri le Funzionalità
           </a>
         </div>
+        <button type="button" class="mobile-platforms-toggle" id="mobilePlatformsToggle" aria-expanded="false" aria-controls="download">
+          <span data-i18n="hero.otherPlatforms">Altre piattaforme (Mac, Windows, Android, iOS)</span>
+          <svg class="toggle-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
         <p class="hero-subtitle" data-i18n="hero.subtitle">Disponibile per <strong>macOS 14+</strong>, <strong>iOS &amp; iPadOS 17+</strong>, <strong>Windows 10/11 (64-bit)</strong> e <strong>Android 8.0+</strong> &bull; UPnP / DLNA Bit-Perfect.</p>
         <p class="hero-mac-tip" data-i18n="hero.macTip"><strong>Installazione diretta:</strong> <strong>Mac</strong> apri il <code>.dmg</code> e trascina in Applicazioni (se richiesto: <em>Impostazioni &rarr; Privacy e sicurezza &rarr; Apri comunque</em>) &bull; <strong>Windows</strong> estrai lo <code>.zip</code> e avvia <code>mustreamer.exe</code> (SmartScreen: <em>Ulteriori informazioni &rarr; Esegui comunque</em>) &bull; <strong>Android</strong> apri il file <code>.apk</code> e consenti l'installazione dal browser.</p>
         
@@ -727,7 +731,7 @@
   </div>
 
   <!-- Multilingua i18n -->
-  <script src="i18n.js?v=20261125b"></script>
+  <script src="i18n.js?v=20261126"></script>
 
   <!-- Toggle interattivo Signal Path (WAV Locale / FLAC Puro / Cloud Diretto) -->
   <script>

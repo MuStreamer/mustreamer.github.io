@@ -38,6 +38,8 @@
       "nav.privacy": "Privacy Policy",
       "nav.cta": "Download App",
       "nav.backToApp": "Back to App",
+      "nav.menu": "Menu",
+      "hero.otherPlatforms": "Other platforms (Mac, Windows, Android, iOS)",
       "hero.badge": "New v1.2 • Now also on Windows &amp; Android!",
       "hero.title": "New life for your Hi-Fi system.<br><span class=\"text-gradient\">Zero sonic compromises.</span>",
       "hero.lead": "MuStreamer is the ultimate audiophile player now available on <strong>Mac, iPhone, iPad, Windows 10/11 and Android</strong>. It combines <strong>Bit-Perfect 24-bit/192 kHz</strong> purity from <strong>Qobuz</strong>, <strong>TIDAL</strong> and <strong>Local Files</strong> with <strong>50,000+ FLAC Live Radios</strong> and <strong>Podcasts</strong>, featuring 3 streaming modes (<em>Pure FLAC</em>, <em>Cloud Direct</em>, <em>Local WAV</em>) for your UPnP streamer.",
@@ -284,6 +286,8 @@
       "nav.privacy": "Confidentialité",
       "nav.cta": "Télécharger l'App",
       "nav.backToApp": "Retour à l'App",
+      "nav.menu": "Menu",
+      "hero.otherPlatforms": "Autres plateformes (Mac, Windows, Android, iOS)",
       "hero.badge": "Nouveau v1.2 • Aussi sur Windows &amp; Android !",
       "hero.title": "Une nouvelle vie pour votre Hi-Fi.<br><span class=\"text-gradient\">Zéro compromis sonore.</span>",
       "hero.lead": "MuStreamer est le lecteur audiophile ultime désormais disponible sur <strong>Mac, iPhone, iPad, Windows 10/11 et Android</strong>. Il associe la pureté <strong>Bit-Perfect 24-bit/192 kHz</strong> de <strong>Qobuz</strong>, <strong>TIDAL</strong> et <strong>Fichiers Locaux</strong> à <strong>50 000+ Radios FLAC</strong> et <strong>Podcasts</strong>, avec 3 modes (<em>FLAC Pur</em>, <em>Cloud Direct</em>, <em>WAV Local</em>).",
@@ -530,6 +534,8 @@
       "nav.privacy": "Datenschutz",
       "nav.cta": "App laden",
       "nav.backToApp": "Zurück zur App",
+      "nav.menu": "Menü",
+      "hero.otherPlatforms": "Weitere Plattformen (Mac, Windows, Android, iOS)",
       "hero.badge": "Neu v1.2 • Jetzt auch für Windows &amp; Android!",
       "hero.title": "Neues Leben für Ihre Hi-Fi-Anlage.<br><span class=\"text-gradient\">Null klangliche Kompromisse.</span>",
       "hero.lead": "MuStreamer ist der ultimative audiophile Player – jetzt für <strong>Mac, iPhone, iPad, Windows 10/11 und Android</strong>. Verbindet <strong>Bit-Perfect 24-Bit/192 kHz</strong> von <strong>Qobuz</strong>, <strong>TIDAL</strong> und <strong>lokalen Dateien</strong> mit <strong>50.000+ FLAC-Radios</strong> und <strong>Podcasts</strong> inklusive 3 Streaming-Modi (<em>Reines FLAC</em>, <em>Cloud Direkt</em>, <em>Lokales WAV</em>).",
@@ -776,6 +782,8 @@
       "nav.privacy": "Privacidad",
       "nav.cta": "Descargar App",
       "nav.backToApp": "Volver a la App",
+      "nav.menu": "Menú",
+      "hero.otherPlatforms": "Otras plataformas (Mac, Windows, Android, iOS)",
       "hero.badge": "Novedad v1.2 • ¡Ahora también en Windows y Android!",
       "hero.title": "Nueva vida para tu equipo Hi-Fi.<br><span class=\"text-gradient\">Cero compromisos sonoros.</span>",
       "hero.lead": "MuStreamer es el reproductor audiófilo definitivo, ya disponible en <strong>Mac, iPhone, iPad, Windows 10/11 y Android</strong>. Une la pureza <strong>Bit-Perfect 24-bit/192 kHz</strong> de <strong>Qobuz</strong>, <strong>TIDAL</strong> y <strong>Archivos Locales</strong> con <strong>50.000+ Radios FLAC</strong> y <strong>Podcasts</strong>, con 3 modos (<em>FLAC Puro</em>, <em>Cloud Directo</em>, <em>WAV Local</em>).",
@@ -1022,6 +1030,8 @@
       "nav.privacy": "Privacidade",
       "nav.cta": "Descarregar App",
       "nav.backToApp": "Voltar à App",
+      "nav.menu": "Menu",
+      "hero.otherPlatforms": "Outras plataformas (Mac, Windows, Android, iOS)",
       "hero.badge": "Novo v1.2 • Agora também no Windows &amp; Android!",
       "hero.title": "Nova vida para o seu sistema Hi-Fi.<br><span class=\"text-gradient\">Zero compromissos sonoros.</span>",
       "hero.lead": "O MuStreamer é o leitor audiófilo definitivo agora disponível no <strong>Mac, iPhone, iPad, Windows 10/11 e Android</strong>. Une a pureza <strong>Bit-Perfect 24-bit/192 kHz</strong> do <strong>Qobuz</strong>, <strong>TIDAL</strong> e <strong>Ficheiros Locais</strong> a <strong>50.000+ Rádios FLAC</strong> e <strong>Podcasts</strong>, com 3 modos (<em>FLAC Puro</em>, <em>Cloud Direto</em>, <em>WAV Local</em>).",
@@ -1268,6 +1278,8 @@
       "nav.privacy": "Privacybeleid",
       "nav.cta": "Download App",
       "nav.backToApp": "Terug naar App",
+      "nav.menu": "Menu",
+      "hero.otherPlatforms": "Andere platforms (Mac, Windows, Android, iOS)",
       "hero.badge": "Nieuw v1.2 • Nu ook op Windows &amp; Android!",
       "hero.title": "Nieuw leven voor uw Hi-Fi-systeem.<br><span class=\"text-gradient\">Geen enkel geluidscompromis.</span>",
       "hero.lead": "MuStreamer is dé audiofiele speler, nu beschikbaar voor <strong>Mac, iPhone, iPad, Windows 10/11 en Android</strong>. Combineert <strong>Bit-Perfect 24-bit/192 kHz</strong> van <strong>Qobuz</strong>, <strong>TIDAL</strong> en <strong>Lokale Bestanden</strong> met <strong>50.000+ FLAC Radio's</strong> en <strong>Podcasts</strong>, inclusief 3 streaming-modi (<em>Pure FLAC</em>, <em>Cloud Direct</em>, <em>Lokale WAV</em>).",
@@ -1514,6 +1526,8 @@
       "nav.privacy": "プライバシー",
       "nav.cta": "アプリを入手",
       "nav.backToApp": "アプリに戻る",
+      "nav.menu": "メニュー",
+      "hero.otherPlatforms": "その他のプラットフォーム (Mac, Windows, Android, iOS)",
       "hero.badge": "新登場 v1.2 • Windows &amp; Android にも対応！",
       "hero.title": "Hi-Fiシステムに、新たな息吹を。<br><span class=\"text-gradient\">音質への妥協はゼロ。</span>",
       "hero.lead": "<strong>Mac、iPhone、iPad、Windows 10/11、Android</strong>で使える究極のオーディオファイル・プレーヤー。<strong>Qobuz</strong>、<strong>TIDAL</strong>、<strong>ローカル音源</strong>の<strong>Bit-Perfect 24-bit/192 kHz</strong>再生に加え、<strong>50,000+ FLACラジオ</strong>・<strong>Podcast</strong>、さらにUPnP向け3モード（<em>Pure FLAC</em>・<em>Cloud Direct</em>・<em>Local WAV</em>）を搭載。",
@@ -1889,14 +1903,17 @@
   // Inizializzazione Dropdown (Lingua + Navigazione Mobile) & Selettore Pagine Mobile
   window.MUSTREAMER_I18N = TRANSLATIONS;
 
-  window.MUSTREAMER_I18N = TRANSLATIONS;
+  // Rilevamento piattaforma mobile per mostrare il CTA primario piu' adatto (Android vs iOS)
+  try {
+    const ua = navigator.userAgent || "";
+    document.documentElement.classList.add(/Android/i.test(ua) ? "device-android" : "device-ios");
+  } catch (_) {}
 
   const MOBILE_SECTIONS = ["home", "features", "tools", "story", "specs"];
   const HASH_TO_SECTION = {
     "": "home",
     "#": "home",
     "#home": "home",
-    "#platforms": "home",
     "#platforms": "home",
     "#download": "home",
     "#features": "features",
@@ -2048,14 +2065,19 @@
     mobileNavMenu.querySelectorAll(".mobile-nav-option").forEach((item) => {
       item.addEventListener("click", (e) => {
         const target = item.getAttribute("data-mobile-target");
+        const rawHref = item.getAttribute("href") || "";
         const page = document.documentElement.getAttribute("data-page") || "index";
         if (page === "index" && MOBILE_SECTIONS.includes(target)) {
           e.preventDefault();
           if (isMobileViewport()) {
-            activateMobileSection(target, { scroll: true, updateHash: true });
+            const hashTargetEl = rawHref === "#platforms" ? document.getElementById("platforms") : null;
+            activateMobileSection(target, { scroll: !hashTargetEl, updateHash: true });
+            if (hashTargetEl) {
+              hashTargetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           } else {
             activateMobileSection(target, { scroll: false, updateHash: true });
-            const hash = SECTION_TO_HASH[target];
+            const hash = rawHref.startsWith("#") ? rawHref : SECTION_TO_HASH[target];
             const el = hash ? document.querySelector(hash) : null;
             if (el) {
               el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -2066,6 +2088,15 @@
         }
         closeMobileMenu();
       });
+    });
+  }
+
+  const mobilePlatformsToggle = document.getElementById("mobilePlatformsToggle");
+  const heroDownloadActions = document.getElementById("download");
+  if (mobilePlatformsToggle && heroDownloadActions) {
+    mobilePlatformsToggle.addEventListener("click", () => {
+      const expanded = heroDownloadActions.classList.toggle("show-all-downloads");
+      mobilePlatformsToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
   }
 

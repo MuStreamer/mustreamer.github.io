@@ -154,9 +154,9 @@ header.site-header {
 }
 
 .nav-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   height: 72px;
 }
@@ -170,6 +170,7 @@ header.site-header {
   letter-spacing: -0.02em;
   flex-shrink: 0;
   white-space: nowrap;
+  justify-self: center;
 }
 
 .brand-icon {
@@ -181,23 +182,7 @@ header.site-header {
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  flex-wrap: nowrap;
-  min-width: 0;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-.nav-links a:hover, .nav-links a.active {
-  color: var(--text-primary);
+  display: none;
 }
 
 .header-cta {
@@ -224,6 +209,7 @@ header.site-header {
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  justify-self: end;
 }
 
 .lang-switcher {
@@ -959,10 +945,120 @@ footer.site-footer {
   padding-top: 24px;
 }
 
-/* Mobile Navigation Dropdown & Pager (Desktop defaults: hidden) */
+/* Universal Hamburger Navigation & Mobile Section Pager */
 .mobile-nav-switcher {
-  display: none;
+  display: block;
   position: relative;
+  justify-self: start;
+}
+
+.mobile-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.menu-btn-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.mobile-nav-btn:hover,
+.mobile-nav-switcher.open .mobile-nav-btn {
+  background: rgba(255, 107, 0, 0.18);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(255, 107, 0, 0.22);
+  color: var(--accent-light);
+}
+
+.mobile-nav-icon {
+  flex-shrink: 0;
+}
+
+.mobile-nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: auto;
+  min-width: 245px;
+  padding: 6px;
+  background: rgba(14, 17, 24, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 24px rgba(255, 107, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  z-index: 1250;
+}
+
+.mobile-nav-switcher.open .mobile-nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.mobile-nav-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mobile-nav-option:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-primary);
+}
+
+.mobile-nav-option.active {
+  background: rgba(255, 107, 0, 0.16);
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.mobile-nav-opt-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.mobile-nav-option.active .mobile-nav-opt-dot {
+  opacity: 1;
+}
+
+.mobile-nav-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 8px;
+}
+
+.mobile-platforms-toggle {
+  display: none;
 }
 
 .mobile-section-pager {
@@ -990,145 +1086,184 @@ footer.site-footer {
   margin-bottom: 12px;
 }
 
-/* Responsive */
-@media (max-width: 1240px) {
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-  }
-
-  .header-cta {
-    padding: 8px 14px;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 1120px) {
-  .nav-container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  }
-
-  .mobile-nav-switcher {
-    display: block;
-    justify-self: start;
-  }
-
-  .brand {
-    justify-self: center;
-  }
-
-  .nav-links { display: none; }
-  .header-cta { display: none; }
-
-  .nav-actions {
-    justify-self: end;
-  }
-
+@media (max-width: 640px) {
   .mobile-nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     width: 38px;
     height: 38px;
     padding: 0;
     border-radius: 11px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: var(--text-primary);
-    font-family: inherit;
-    cursor: pointer;
-    transition: var(--transition);
   }
 
-  .mobile-nav-btn:hover,
-  .mobile-nav-switcher.open .mobile-nav-btn {
-    background: rgba(255, 107, 0, 0.18);
-    border-color: var(--accent);
-    box-shadow: 0 0 14px rgba(255, 107, 0, 0.22);
-    color: var(--accent-light);
-  }
-
-  .mobile-nav-icon {
-    flex-shrink: 0;
-  }
-
-  .mobile-nav-menu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    right: auto;
-    min-width: 225px;
-    padding: 6px;
-    background: #0e1118;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius-md);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 24px rgba(255, 107, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px) scale(0.98);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-    z-index: 1250;
-  }
-
-  .mobile-nav-switcher.open .mobile-nav-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-  }
-
-  .mobile-nav-option {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: var(--radius-sm);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-
-  .mobile-nav-option:hover {
-    background: rgba(255, 255, 255, 0.07);
-    color: var(--text-primary);
-  }
-
-  .mobile-nav-option.active {
-    background: rgba(255, 107, 0, 0.16);
-    color: var(--accent-light);
-    font-weight: 600;
-  }
-
-  .mobile-nav-opt-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent);
-    opacity: 0;
-    flex-shrink: 0;
-  }
-
-  .mobile-nav-option.active .mobile-nav-opt-dot {
-    opacity: 1;
-  }
-
-  .mobile-nav-divider {
-    height: 1px;
-    background: var(--border-subtle);
-    margin: 6px 8px;
+  .menu-btn-label {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
+  .header-cta {
+    display: none;
+  }
+
+  /* Clean Smartphone Hero Layout (OS-aware single flagship CTA + toggle) */
+  .hero {
+    padding: 20px 0 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.1rem);
+    margin: 14px 0 12px;
+    line-height: 1.12;
+  }
+
+  .hero p.lead {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  html:not(.device-android) .hero-actions:not(.show-all-downloads) .hero-cta-android,
+  html:not(.device-android) .hero-actions:not(.show-all-downloads) .hero-cta-mac-store,
+  html:not(.device-android) .hero-actions:not(.show-all-downloads) .hero-cta-mac-dmg,
+  html:not(.device-android) .hero-actions:not(.show-all-downloads) .hero-cta-windows {
+    display: none;
+  }
+
+  html.device-android .hero-actions:not(.show-all-downloads) .hero-cta-ios,
+  html.device-android .hero-actions:not(.show-all-downloads) .hero-cta-mac-store,
+  html.device-android .hero-actions:not(.show-all-downloads) .hero-cta-mac-dmg,
+  html.device-android .hero-actions:not(.show-all-downloads) .hero-cta-windows {
+    display: none;
+  }
+
+  html:not(.device-android) .hero-actions .hero-cta-ios,
+  html.device-android .hero-actions .hero-cta-android {
+    grid-column: 1 / -1;
+    order: -2;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    border-color: rgba(255, 190, 140, 0.55);
+    box-shadow: 0 10px 28px rgba(255, 107, 0, 0.36);
+    padding: 13px 20px;
+  }
+
+  html:not(.device-android) .hero-actions .hero-cta-ios .caption,
+  html.device-android .hero-actions .hero-cta-android .caption {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .hero-actions .hero-cta-discover {
+    grid-column: 1 / -1;
+    order: -1;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.92rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-actions.show-all-downloads {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions.show-all-downloads .app-store-btn,
+  .hero-actions.show-all-downloads .btn-secondary {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .mobile-platforms-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 2px auto 10px;
+    padding: 7px 14px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .mobile-platforms-toggle .toggle-chevron {
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-platforms-toggle[aria-expanded="true"] .toggle-chevron {
+    transform: rotate(180deg);
+    color: var(--accent-light);
+  }
+
+  .coming-soon-badge.ecosystem-live-badge,
+  .hero-subtitle,
+  .hero-mac-tip,
+  .whats-new-strip,
+  .platforms-pill-row {
+    display: none;
+  }
+
+  html.device-android .hero-mac-tip,
+  .hero-actions.show-all-downloads ~ .hero-mac-tip {
+    display: block;
+    font-size: 0.74rem;
+    opacity: 0.85;
+    margin-top: 8px;
+  }
+
+  .platforms-section {
+    padding: 34px 0 18px;
+  }
+
+  .platforms-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  .platform-card {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .platform-card h3 {
+    font-size: 1.18rem;
+  }
+
+  .platform-card > p {
+    font-size: 0.88rem;
+  }
+
+  .platform-bullets {
+    font-size: 0.84rem;
+    gap: 6px;
+  }
+
+  .platform-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
 
   /* Mobile Page-by-Page View on Index */
   html[data-page="index"] main > section[data-mobile-section] {
@@ -1998,10 +2133,6 @@ footer.site-footer {
     padding-top: calc(62px + env(safe-area-inset-top));
   }
 
-  .hero {
-    padding: 22px 0 28px;
-  }
-
   /* Keep badge pulse inline (never orphaned above text) */
   .badge {
     display: inline-flex;
@@ -2019,95 +2150,38 @@ footer.site-footer {
     flex-shrink: 0;
   }
 
-  .hero h1 {
-    font-size: clamp(1.75rem, 7.6vw, 2.18rem);
-    margin: 14px 0 12px;
-    line-height: 1.12;
-  }
-
-  .hero p.lead {
-    font-size: 0.93rem;
-    line-height: 1.55;
-    margin-bottom: 20px;
-  }
-
-  /* iPhone-first Hero CTA Hierarchy: iOS App Store flagship orange on top, Mac options compact side-by-side */
-  .hero-actions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .hero-actions .app-store-btn,
-  .hero-actions .btn-secondary {
-    width: 100%;
-    max-width: none;
-    justify-content: center;
-  }
-
-  .hero-actions .hero-cta-ios {
-    grid-column: 1 / -1;
-    order: -2;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
-    border-color: rgba(255, 190, 140, 0.55);
-    box-shadow: 0 10px 28px rgba(255, 107, 0, 0.36);
-    padding: 13px 20px;
-  }
-
-  .hero-actions .hero-cta-ios .caption {
-    color: rgba(255, 255, 255, 0.88);
-  }
-
-  .hero-actions .hero-cta-discover {
-    grid-column: 1 / -1;
-    order: -1;
-    padding: 12px 18px;
-    font-size: 0.94rem;
-    border-radius: var(--radius-md);
-  }
-
-  .hero-actions .hero-cta-mac-store,
-  .hero-actions .hero-cta-mac-dmg {
+  .hero-actions.show-all-downloads .hero-cta-mac-store,
+  .hero-actions.show-all-downloads .hero-cta-mac-dmg,
+  .hero-actions.show-all-downloads .hero-cta-windows,
+  .hero-actions.show-all-downloads .hero-cta-android,
+  .hero-actions.show-all-downloads .hero-cta-ios {
     padding: 10px 8px;
     gap: 7px;
     border-radius: 12px;
     background: rgba(18, 20, 26, 0.88);
   }
 
-  .hero-actions .hero-cta-mac-store svg,
-  .hero-actions .hero-cta-mac-dmg svg {
+  .hero-actions.show-all-downloads .hero-cta-ios,
+  html.device-android .hero-actions.show-all-downloads .hero-cta-android {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+  }
+
+  .hero-actions.show-all-downloads .hero-cta-mac-store svg,
+  .hero-actions.show-all-downloads .hero-cta-mac-dmg svg {
     width: 20px;
     height: 20px;
   }
 
-  .hero-actions .hero-cta-mac-store .caption,
-  .hero-actions .hero-cta-mac-dmg .caption {
+  .hero-actions.show-all-downloads .hero-cta-mac-store .caption,
+  .hero-actions.show-all-downloads .hero-cta-mac-dmg .caption {
     font-size: 0.56rem;
     letter-spacing: 0.02em;
   }
 
-  .hero-actions .hero-cta-mac-store .store-name,
-  .hero-actions .hero-cta-mac-dmg .store-name {
+  .hero-actions.show-all-downloads .hero-cta-mac-store .store-name,
+  .hero-actions.show-all-downloads .hero-cta-mac-dmg .store-name {
     font-size: 0.82rem;
     white-space: nowrap;
-  }
-
-  .hero-subtitle {
-    font-size: 0.8rem;
-    line-height: 1.45;
-  }
-
-  .hero-mac-tip {
-    font-size: 0.72rem;
-    opacity: 0.8;
-    margin-top: 6px;
-  }
-
-  .coming-soon-badge {
-    margin-top: 12px;
-    font-size: 0.76rem;
-    padding: 5px 13px;
   }
 
   /* Compact Hero Mockup on iPhone */
@@ -2171,13 +2245,13 @@ footer.site-footer {
     gap: 6px;
   }
 
-  /* Sleek Compact iOS Feature & Tool Cards */
+  /* Features & Tools spacing on mobile */
   .features-grid {
-    gap: 12px;
+    gap: 14px;
   }
 
   .feature-card {
-    padding: 16px 15px;
+    padding: 20px 16px;
     border-radius: 18px;
   }
 
@@ -2325,22 +2399,6 @@ footer.site-footer {
   .subpage-main .mockup-card p {
     font-size: 0.9rem;
     line-height: 1.58;
-  }
-
-  .platforms-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .platform-card {
-    padding: 18px 15px;
-  }
-
-  .hero-actions .hero-cta-windows,
-  .hero-actions .hero-cta-android {
-    padding: 10px 8px;
-    gap: 7px;
-    border-radius: 12px;
   }
 }
 
